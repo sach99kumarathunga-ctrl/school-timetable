@@ -1,0 +1,1988 @@
+{
+  "grades": [
+    {
+      "grade": "Grade 6",
+      "classes": [
+        "6A",
+        "6B",
+        "6C",
+        "6D",
+        "6E",
+        "6F",
+        "6G"
+      ],
+      "subjects": [
+        {
+          "subject": "English",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Nimnada",
+              "classes": [
+                "6A",
+                "6B",
+                "6E",
+                "6F"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Ms. Gimhani",
+              "classes": [
+                "6C",
+                "6D",
+                "6G"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Maths",
+          "weekly": 9,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Ikesha",
+              "classes": [
+                "6A",
+                "6E",
+                "6F"
+              ],
+              "periods": 9
+            },
+            {
+              "teacher": "Ms. Maheshi",
+              "classes": [
+                "6B",
+                "6C",
+                "6D"
+              ],
+              "periods": 9
+            },
+            {
+              "teacher": "New MAT",
+              "classes": [
+                "6G"
+              ],
+              "periods": 9
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Science",
+          "weekly": 6,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Hasini",
+              "classes": [
+                "6A",
+                "6C",
+                "6F"
+              ],
+              "periods": 6
+            },
+            {
+              "teacher": "Ms. Sankalpi",
+              "classes": [
+                "6B",
+                "6D",
+                "6E",
+                "6G"
+              ],
+              "periods": 6
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Sinhala",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Nadeeshani",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Tamil",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Dharshika",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Speech & Drama",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New SDR",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Effective Speech",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New EFS",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Computer Science",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Prasadi",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "PT",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New PHE 1",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "History & Geography",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Bhagya",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Little Friends",
+          "weekly": 1,
+          "color": "rgb:FF7030A0",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New LFR",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "rgb:FF7030A0"
+        },
+        {
+          "subject": "Cub Scouts",
+          "weekly": 1,
+          "color": "rgb:FF7030A0",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUS",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "rgb:FF7030A0"
+        },
+        {
+          "subject": "Buddhism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Ms. Nimesha",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Sankalpi",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Ikesha",
+              "classes": [
+                "6C",
+                "6D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Gimhani",
+              "classes": [
+                "6C",
+                "6D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Nimnada",
+              "classes": [
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Hasini",
+              "classes": [
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Bhagya",
+              "classes": [
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Hinduism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New HIN",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Islam",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Mr. Jabir",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Catholicism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New RCA",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Christianity",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New CHR",
+              "classes": [
+                "6A",
+                "6B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Cultural Dancing",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUD 1",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Western Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Savini",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Eastern Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Mr. Shehan",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Mandarin Chinese",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Diwyanjali",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "French",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New FRE",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Art",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Pulakshika",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Civics",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Nimesha",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Cookery",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Sakna",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Technical skills",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New TES",
+              "classes": [
+                "6A",
+                "6B",
+                "6C",
+                "6D",
+                "6E",
+                "6F",
+                "6G"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        }
+      ],
+      "buckets": [
+        {
+          "id": "t9_0.60",
+          "color": "t9_0.60",
+          "subjects": [
+            "Sinhala",
+            "Tamil"
+          ]
+        },
+        {
+          "id": "rgb:FF7030A0",
+          "color": "rgb:FF7030A0",
+          "subjects": [
+            "Little Friends",
+            "Cub Scouts"
+          ]
+        },
+        {
+          "id": "RELIGION",
+          "color": "RELIGION",
+          "subjects": [
+            "Buddhism",
+            "Hinduism",
+            "Islam",
+            "Catholicism",
+            "Christianity"
+          ]
+        },
+        {
+          "id": "t7_0.60",
+          "color": "t7_0.60",
+          "subjects": [
+            "Cultural Dancing",
+            "Western Music",
+            "Eastern Music",
+            "Mandarin Chinese",
+            "French",
+            "Art"
+          ]
+        },
+        {
+          "id": "t6_0.60",
+          "color": "t6_0.60",
+          "subjects": [
+            "Civics",
+            "Cookery",
+            "Technical skills"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": "Grade 7",
+      "classes": [
+        "7A",
+        "7B",
+        "7C",
+        "7D",
+        "7E",
+        "7F"
+      ],
+      "subjects": [
+        {
+          "subject": "English",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Niwanthi",
+              "classes": [
+                "7A",
+                "7B",
+                "7C"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Ms. Sanduni",
+              "classes": [
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Maths",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Annuradha",
+              "classes": [
+                "7A",
+                "7B",
+                "7C"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Ms. Sandali",
+              "classes": [
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Science",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Kaushalya",
+              "classes": [
+                "7A",
+                "7B",
+                "7C"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Ms. Sonali",
+              "classes": [
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Sinhala",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Rumesha",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Tamil",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Dharshika",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Speech & Drama",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New SDR",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Effective Speech",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New EFS",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Computer Science",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Tharanji",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "PT",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New PHE 1",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Commerce",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Miyurangi",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "History & Geography",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Meththa",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Little Friends",
+          "weekly": 1,
+          "color": "t4_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New LFR",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "t4_0.60"
+        },
+        {
+          "subject": "Cub Scouts",
+          "weekly": 1,
+          "color": "t4_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUS",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "t4_0.60"
+        },
+        {
+          "subject": "Buddhism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Ms. Sandali",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Niwanthi",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Nimesha",
+              "classes": [
+                "7C",
+                "7D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Diwyanjali",
+              "classes": [
+                "7C",
+                "7D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Sonali",
+              "classes": [
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Meththa",
+              "classes": [
+                "7E",
+                "7F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Hinduism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New HIN",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Islam",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Mr. Jabir",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Catholicism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New RCA",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Christianity",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New CHR",
+              "classes": [
+                "7A",
+                "7B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Cultural Dancing",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUD 1",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Western Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Savini",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Eastern Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Mr. Shehan",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Mandarin Chinese",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Diwyanjali",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Art",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Pulakshika",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Civics",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Rumesha",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Cookery",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Sakna",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Technical skills",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New TES",
+              "classes": [
+                "7A",
+                "7B",
+                "7C",
+                "7D",
+                "7E",
+                "7F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        }
+      ],
+      "buckets": [
+        {
+          "id": "t9_0.60",
+          "color": "t9_0.60",
+          "subjects": [
+            "Sinhala",
+            "Tamil"
+          ]
+        },
+        {
+          "id": "t4_0.60",
+          "color": "t4_0.60",
+          "subjects": [
+            "Little Friends",
+            "Cub Scouts"
+          ]
+        },
+        {
+          "id": "RELIGION",
+          "color": "RELIGION",
+          "subjects": [
+            "Buddhism",
+            "Hinduism",
+            "Islam",
+            "Catholicism",
+            "Christianity"
+          ]
+        },
+        {
+          "id": "t7_0.60",
+          "color": "t7_0.60",
+          "subjects": [
+            "Cultural Dancing",
+            "Western Music",
+            "Eastern Music",
+            "Mandarin Chinese",
+            "Art"
+          ]
+        },
+        {
+          "id": "t6_0.60",
+          "color": "t6_0.60",
+          "subjects": [
+            "Civics",
+            "Cookery",
+            "Technical skills"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": "Grade 8",
+      "classes": [
+        "8A",
+        "8B",
+        "8C",
+        "8D",
+        "8E",
+        "8F"
+      ],
+      "subjects": [
+        {
+          "subject": "English",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Gavithri",
+              "classes": [
+                "8A",
+                "8B",
+                "8C"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "New ENG",
+              "classes": [
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Maths",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Prathiba",
+              "classes": [
+                "8A",
+                "8B",
+                "8C"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Mr. Mithun",
+              "classes": [
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Science",
+          "weekly": 7,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Sineshi",
+              "classes": [
+                "8A",
+                "8D",
+                "8E"
+              ],
+              "periods": 7
+            },
+            {
+              "teacher": "Ms. Harshika",
+              "classes": [
+                "8B",
+                "8C",
+                "8F"
+              ],
+              "periods": 7
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Sinhala",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Dilki",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Tamil",
+          "weekly": 2,
+          "color": "t9_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Dharshika",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t9_0.60"
+        },
+        {
+          "subject": "Speech & Drama",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New SDR",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Effective Speech",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New EFS",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Computer Science",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CSC 1",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "PT",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New PHE 1",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Commerce",
+          "weekly": 2,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms.Miyurangi",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "History & Geography",
+          "weekly": 3,
+          "color": "none",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Manori",
+              "classes": [
+                "8E"
+              ],
+              "periods": 3
+            },
+            {
+              "teacher": "New HIG",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8F"
+              ],
+              "periods": 3
+            }
+          ],
+          "bucketId": null
+        },
+        {
+          "subject": "Little Friends",
+          "weekly": 1,
+          "color": "t4_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New LFR",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "t4_0.60"
+        },
+        {
+          "subject": "Cub Scouts",
+          "weekly": 1,
+          "color": "t4_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUS",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "t4_0.60"
+        },
+        {
+          "subject": "Buddhism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Ms. Nimesha",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Gavithri",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Harshika",
+              "classes": [
+                "8C",
+                "8D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "Ms. Sineshi",
+              "classes": [
+                "8C",
+                "8D"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "New BUD 1",
+              "classes": [
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            },
+            {
+              "teacher": "New BUD 2",
+              "classes": [
+                "8E",
+                "8F"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Hinduism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New HIN",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Islam",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "Mr. Jabir",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Catholicism",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New RCA",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Christianity",
+          "weekly": 1,
+          "color": "t5_0.80",
+          "religionBlock": true,
+          "assignments": [
+            {
+              "teacher": "New CHR",
+              "classes": [
+                "8A",
+                "8B"
+              ],
+              "periods": 1
+            }
+          ],
+          "bucketId": "RELIGION"
+        },
+        {
+          "subject": "Cultural Dancing",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New CUD 1",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Western Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Savini",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Eastern Music",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Mr. Shehan",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Mandarin Chinese",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Diwyanjali",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Art",
+          "weekly": 2,
+          "color": "t7_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Pulakshika",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t7_0.60"
+        },
+        {
+          "subject": "Civics",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Rumesha",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Cookery",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "Ms. Sakna",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        },
+        {
+          "subject": "Technical skills",
+          "weekly": 2,
+          "color": "t6_0.60",
+          "religionBlock": false,
+          "assignments": [
+            {
+              "teacher": "New TES",
+              "classes": [
+                "8A",
+                "8B",
+                "8C",
+                "8D",
+                "8E",
+                "8F"
+              ],
+              "periods": 2
+            }
+          ],
+          "bucketId": "t6_0.60"
+        }
+      ],
+      "buckets": [
+        {
+          "id": "t9_0.60",
+          "color": "t9_0.60",
+          "subjects": [
+            "Sinhala",
+            "Tamil"
+          ]
+        },
+        {
+          "id": "t4_0.60",
+          "color": "t4_0.60",
+          "subjects": [
+            "Little Friends",
+            "Cub Scouts"
+          ]
+        },
+        {
+          "id": "RELIGION",
+          "color": "RELIGION",
+          "subjects": [
+            "Buddhism",
+            "Hinduism",
+            "Islam",
+            "Catholicism",
+            "Christianity"
+          ]
+        },
+        {
+          "id": "t7_0.60",
+          "color": "t7_0.60",
+          "subjects": [
+            "Cultural Dancing",
+            "Western Music",
+            "Eastern Music",
+            "Mandarin Chinese",
+            "Art"
+          ]
+        },
+        {
+          "id": "t6_0.60",
+          "color": "t6_0.60",
+          "subjects": [
+            "Civics",
+            "Cookery",
+            "Technical skills"
+          ]
+        }
+      ]
+    }
+  ]
+}
