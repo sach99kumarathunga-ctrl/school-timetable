@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import {
   DAYS, PERIOD_LABELS, INTERVAL_AFTER, bucketColor,
   classGrids, teacherGrids, allTeachers, allClasses, assemblyDayFor,
@@ -8,18 +8,42 @@ import { exportExcel } from "../components/exportExcel";
 import { exportPdf } from "../components/exportPdf";
 import { exportPersonalExcel, exportPersonalPdf } from "../components/exportPersonal";
 
+const TIME_ROWS = [
+  { label: "7.40 a.m. - 8.15 a.m.", period: 0 },
+  { label: "Register Marking", fixed: true },
+  { label: "8.30 a.m. - 9.10 a.m.", period: 1 },
+  { label: "9.10 a.m. - 9.50 a.m.", period: 2 },
+  { label: "9.50 a.m. - 10.25 a.m.", period: 3 },
+  { label: "Interval", fixed: true },
+  { label: "Seiri Time", fixed: true },
+  { label: "10.55 a.m. - 11.35 a.m.", period: 4 },
+  { label: "11.35 a.m. - 12.15 p.m.", period: 5 },
+  { label: "12.15 p.m. - 1.00 p.m.", period: 6 },
+  { label: "1.00 p.m. - 1.45 p.m.", period: 7 },
+];
+
 export default function Page() {
   const [data, setData] = useState(null);
-  const [mode, setMode] = useState("class"); // 'class' | 'teacher'
+  const [mode, setMode] = useState("class");
   const [grade, setGrade] = useState("");
   const [sel, setSel] = useState("");
   const [busy, setBusy] = useState(false);
+  const [teacherSearch, setTeacherSearch] = useState("");
+  const [searchActive, setSearchActive] = useState(false);
+  const [classSearch, setClassSearch] = useState("");
+  const [classSearchActive, setClassSearchActive] = useState(false);
+  const [altOptions, setAltOptions] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("/api/timetable").then(r => r.json()).then(d => {
-      setData(d);
-    });
+    fetchData();
   }, []);
+
+  async function fetchData() {
+    const r = await fetch("/api/timetable");
+    const d = await r.json();
+    setData(d);
+  }
 
   const cGrids = useMemo(() => data ? classGrids(data.placements) : {}, [data]);
   const tGrids = useMemo(() => data ? teacherGrids(data.placements) : {}, [data]);
@@ -27,53 +51,150 @@ export default function Page() {
   const teachers = useMemo(() => data ? allTeachers(data.placements) : [], [data]);
   const grades = useMemo(() => {
     const set = new Set(classes.map(c => c.split("/")[0]));
-    return [...set];
+    return [...set].sort((a, b) => {
+      const na = parseInt(a.replace("Grade ", ""));
+      const nb = parseInt(b.replace("Grade ", ""));
+      return na - nb;
+    });
   }, [classes]);
 
-  // classes within the selected grade
   const gradeClasses = useMemo(
     () => classes.filter(c => c.startsWith(grade + "/")),
     [classes, grade]
   );
 
+  const filteredTeachers = useMemo(() => {
+    if (!teacherSearch) return teachers;
+    const q = teacherSearch.toLowerCase();
+    return teachers.filter(t => t.toLowerCase().includes(q));
+  }, [teachers, teacherSearch]);
+
+  const filteredClasses = useMemo(() => {
+    if (!classSearch) return classes;
+    const q = classSearch.toLowerCase();
+    return classes.filter(c => c.toLowerCase().includes(q));
+  }, [classes, classSearch]);
+
   useEffect(() => {
     if (!data) return;
     if (!grade && grades.length) setGrade(grades[0]);
-  }, [data, grades]); // eslint-disable-line
+  }, [data, grades]);
 
   useEffect(() => {
     if (!data) return;
     if (mode === "class") {
       if (!gradeClasses.includes(sel)) setSel(gradeClasses[0] || "");
-    } else {
+    } else if (mode === "teacher") {
       if (!tGrids[sel]) setSel(teachers[0] || "");
     }
-  }, [mode, grade, data]); // eslint-disable-line
+  }, [mode, grade, data]);
+
+  const resolveIssue = useCallback(async (w) => {
+    setMessage(`Fixing: ${w.subject} (${w.teacher}) ${w.grade} — reducing by ${w.short} period(s)...`);
+    setBusy(true);
+    try {
+      const resp = await fetch("/api/model");
+      const md = await resp.json();
+      const grades = md.grades;
+      for (const g of grades) {
+        if (g.grade !== w.grade) continue;
+        if (w.type === "lesson") {
+          for (const s of g.subjects) {
+            if (s.subject !== w.subject) continue;
+            for (const a of s.assignments) {
+              if (a.teacher !== w.teacher) continue;
+              if (!a.classes.includes(w.class)) continue;
+              a.periods = Math.max(0, a.periods - w.short);
+              s.weekly = Math.max(0, (s.weekly || 0) - w.short);
+            }
+          }
+        }
+        if (w.type === "bucket") {
+          for (const s of g.subjects) {
+            if (s.bucketId !== w.id) continue;
+            s.weekly = Math.max(0, (s.weekly || 1) - w.short);
+            for (const a of s.assignments) {
+              a.periods = Math.max(0, (a.periods || 1) - w.short);
+            }
+          }
+        }
+      }
+      const saveResp = await fetch("/api/model", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ grades }),
+      });
+      const saveData = await saveResp.json();
+      if (!saveData.saved) {
+        setMessage(`Save failed: ${saveData.reason}`);
+        setBusy(false);
+        return;
+      }
+      // Now regenerate locally with improved generator
+      const genResp = await fetch("/api/regenerate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model: { grades } }),
+      });
+      const genData = await genResp.json();
+      if (genData.ok) {
+        const saveGenResp = await fetch("/api/timetable/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(genData),
+        });
+        await saveGenResp.json();
+        await fetchData();
+        setMessage(`Fixed! ${w.subject} reduced by ${w.short} period(s). Timetable regenerated.`);
+      } else {
+        setMessage(`Regenerate failed: ${genData.reason}`);
+      }
+    } catch (e) {
+      setMessage("Error: " + e);
+    }
+    setBusy(false);
+  }, []);
+
+  async function regenerateAll() {
+    setMessage("Regenerating timetable (improved local solver)...");
+    setBusy(true);
+    try {
+      const resp = await fetch("/api/model");
+      const md = await resp.json();
+      const genResp = await fetch("/api/regenerate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model: md }),
+      });
+      const genData = await genResp.json();
+      if (genData.ok) {
+        const saveResp = await fetch("/api/timetable/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(genData),
+        });
+        await saveResp.json();
+        await fetchData();
+        setMessage(`Regenerated! ${genData.placements.length} placements, ${genData.warnings.length} warnings.`);
+      } else {
+        setMessage(`Regenerate failed: ${genData.reason}`);
+      }
+    } catch (e) {
+      setMessage("Error: " + e);
+    }
+    setBusy(false);
+  }
 
   if (!data) return <Loading />;
 
   const isClass = mode === "class";
-  const options = isClass ? gradeClasses : teachers;
-  const current = isClass ? cGrids[sel] : tGrids[sel];
-  const title = sel;
-  const subtitle = isClass ? "Class timetable" : "Teacher personal timetable";
-
-  function doExport(kind) {
-    if (!current) return;
-    setBusy(true);
-    try {
-      if (isClass) {
-        if (kind === "xlsx") exportExcel({ mode, sel, current, data });
-        else exportPdf({ mode, sel, current, data });
-      } else {
-        // Teacher: use the Lyceum personal-timetable template. Compute subjects + assembly day.
-        const subjectsTaught = teacherSubjects(data.placements, sel);
-        const info = { ...current, assemblyDay: teacherAssemblyDay(data.placements, sel) };
-        if (kind === "xlsx") exportPersonalExcel({ teacher: sel, info, subjectsTaught });
-        else exportPersonalPdf({ teacher: sel, info, subjectsTaught });
-      }
-    } finally { setBusy(false); }
-  }
+  const isTeacher = mode === "teacher";
+  const isIssues = mode === "issues";
+  const current = isClass ? cGrids[sel] : (isTeacher ? tGrids[sel] : null);
+  const title = isIssues ? "Issues & Conflicts" : sel;
+  const subtitle = isIssues
+    ? `${data.warnings?.length || 0} unplaced period(s)· click Fix to auto-resolve`
+    : isClass ? "Class timetable" : "Teacher personal timetable";
 
   return (
     <>
@@ -90,13 +211,18 @@ export default function Page() {
         <div className="wrap">
           <div className="gradetabs" role="tablist" aria-label="Grades">
             {grades.map(g => (
-              <button key={g} role="tab" aria-selected={g === grade}
-                onClick={() => { setMode("class"); setGrade(g); }}>
+              <button key={g} role="tab" aria-selected={g === grade && mode === "class"}
+                onClick={() => { setMode("class"); setGrade(g); setTeacherSearch(""); setClassSearch(""); }}>
                 {g.replace("Grade ", "Gr ")}
               </button>
             ))}
             <button role="tab" aria-selected={mode === "teacher"}
-              onClick={() => setMode("teacher")}>Teachers</button>
+              onClick={() => { setMode("teacher"); setSearchActive(true); }}>Teachers</button>
+            <button role="tab" aria-selected={mode === "issues"}
+              className={data.warnings?.length > 0 ? "has-issues" : ""}
+              onClick={() => { setMode("issues"); setTeacherSearch(""); setClassSearch(""); }}>
+              Issues {data.warnings?.length > 0 ? `(${data.warnings.length})` : ""}
+            </button>
           </div>
           <a className="editlink" href="/edit">Edit data →</a>
         </div>
@@ -111,46 +237,175 @@ export default function Page() {
                   {c.split("/")[1]}
                 </button>
               ))}
+              <div className="class-search-wrap">
+                <input type="text" placeholder="Search class..." value={classSearch}
+                  onChange={e => { setClassSearch(e.target.value); setSel(""); setClassSearchActive(true); }}
+                  onFocus={() => setClassSearchActive(true)}
+                  aria-label="Search class" />
+                {classSearchActive && (
+                  <div className="search-results">
+                    {filteredClasses.length === 0 ? (
+                      <span className="no-match">No classes found</span>
+                    ) : (
+                      filteredClasses.map(c => (
+                        <button key={c} className={sel === c ? "active" : ""}
+                          onClick={() => {
+                            const [g, cls] = c.split("/");
+                            setGrade(g);
+                            setSel(c);
+                            setClassSearch(cls);
+                            setClassSearchActive(false);
+                          }}>{c.split("/")[1]}</button>
+                      ))
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           )}
-          {!isClass && (
-            <select value={sel} onChange={e => setSel(e.target.value)} aria-label="Select teacher">
-              {teachers.map(o => <option key={o} value={o}>{o}</option>)}
-            </select>
+          {isTeacher && (
+            <div className="teacher-search">
+              <input type="text" placeholder="Search teacher..." value={teacherSearch}
+                onChange={e => { setTeacherSearch(e.target.value); setSel(""); setSearchActive(true); }}
+                onFocus={() => setSearchActive(true)}
+                aria-label="Search teacher" />
+              {searchActive && (
+                <div className="search-results">
+                  {filteredTeachers.length === 0 ? (
+                    <span className="no-match">No teachers found</span>
+                  ) : (
+                    filteredTeachers.map(t => (
+                      <button key={t} className={sel === t ? "active" : ""}
+                        onClick={() => { setSel(t); setSearchActive(false); setTeacherSearch(t); }}>{t}</button>
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+          {isIssues && (
+            <div className="issues-actions">
+              <button className="btn primary" disabled={busy} onClick={regenerateAll}>
+                ⟳ Regenerate All
+              </button>
+              <button className="btn" onClick={() => setAltOptions(!altOptions)}>
+                ⚙ Alternative Options
+              </button>
+            </div>
           )}
           <div className="spacer" />
-          <button className="btn" disabled={busy} onClick={() => doExport("pdf")}>Download PDF</button>
-          <button className="btn primary" disabled={busy} onClick={() => doExport("xlsx")}>Download Excel</button>
+          {!isIssues && (
+            <>
+              <button className="btn" disabled={busy} onClick={() => doExport("pdf")}>Download PDF</button>
+              <button className="btn primary" disabled={busy} onClick={() => doExport("xlsx")}>Download Excel</button>
+            </>
+          )}
         </div>
       </div>
 
-      <main className="wrap sheet">
-        {data.warnings?.length > 0 && (
-          <div className="warns">
-            <b>{data.warnings.length} period(s) could not be auto-placed.</b> These need a manual slot:
-            <ul>{data.warnings.slice(0, 8).map((w, i) => <li key={i}>{typeof w === "string" ? w : `${w.grade} ${w.subject} (${w.teacher}) — ${w.short} period(s) short`}</li>)}</ul>
+      {altOptions && (
+        <div className="alt-options wrap">
+          <p><b>Alternative Options</b> — Adjust generation strategy:</p>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <span className="note">The improved local generator uses interleaved placement for shared teachers, teacher-load-aware sorting, and up to 10 random restarts. Click <b>Regenerate All</b> to re-run with current data.</span>
           </div>
+        </div>
+      )}
+
+      <main className="wrap sheet">
+        {message && (
+          <div className="msg" onClick={() => setMessage("")}>{message}</div>
         )}
 
-        <div className="sheet-head">
-          <h2>{title}</h2>
-          <span className="meta">{subtitle} · 8 periods/day · interval after P4</span>
-        </div>
-
-        {isClass
-          ? <ClassTable info={current} />
-          : <TeacherTable info={current} />}
-
-        {isClass && <Legend grids={cGrids} sel={sel} />}
+        {isIssues ? (
+          <IssuesPanel warnings={data.warnings || []} resolveIssue={resolveIssue} busy={busy} />
+        ) : (
+          <>
+            <div className="sheet-head">
+              <h2>{title}</h2>
+              <span className="meta">{subtitle} · 8 periods/day · interval after P4</span>
+            </div>
+            {isClass ? <ClassTable info={current} /> : <TeacherTable info={current} />}
+            {isClass && <Legend grids={cGrids} sel={sel} />}
+          </>
+        )}
       </main>
 
       <footer className="foot">
         <div className="wrap">
-          Generated by constraint solver (OR-Tools CP-SAT). Saved to MongoDB.
-          Set <code>MONGODB_URI</code> to persist regenerated plans.
+          Generated by improved local solver (interleaved placement, teacher-load sorting, random restarts).
+          Saved to MongoDB. Set <code>MONGODB_URI</code> to persist regenerated plans.
         </div>
       </footer>
     </>
+  );
+
+  function doExport(kind) {
+    if (!current) return;
+    setBusy(true);
+    try {
+      if (isClass) {
+        if (kind === "xlsx") exportExcel({ mode, sel, current, data });
+        else exportPdf({ mode, sel, current, data });
+      } else {
+        const subjectsTaught = teacherSubjects(data.placements, sel);
+        const info = { ...current, assemblyDay: teacherAssemblyDay(data.placements, sel) };
+        if (kind === "xlsx") exportPersonalExcel({ teacher: sel, info, subjectsTaught });
+        else exportPersonalPdf({ teacher: sel, info, subjectsTaught });
+      }
+    } finally { setBusy(false); }
+  }
+}
+
+function IssuesPanel({ warnings, resolveIssue, busy }) {
+  if (warnings.length === 0) {
+    return (
+      <div style={{ padding: "40px 0", textAlign: "center" }}>
+        <h2>✅ All clear!</h2>
+        <p className="meta">No scheduling conflicts detected.</p>
+      </div>
+    );
+  }
+  return (
+    <div className="issues-panel">
+      <h2>Issues ({warnings.length})</h2>
+      <p className="meta">Each issue represents periods that could not be auto-placed. Click <b>Fix</b> to reduce the subject's period count by the shortage and regenerate.</p>
+      <table className="issues-table">
+        <thead>
+          <tr>
+            <th>Grade</th>
+            <th>Type</th>
+            <th>Subject / Bucket</th>
+            <th>Teacher</th>
+            <th>Class</th>
+            <th className="num">Short</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {warnings.map((w, i) => (
+            <tr key={i}>
+              <td>{w.grade}</td>
+              <td><span className={`issue-type ${w.type}`}>{w.type === "bucket" ? "Bucket" : "Lesson"}</span></td>
+              <td>{w.subject || w.id}</td>
+              <td>{w.teacher || "—"}</td>
+              <td>{w.class || "—"}</td>
+              <td className="num">{w.short}</td>
+              <td>
+                <button className="btn fix-btn" disabled={busy}
+                  onClick={() => resolveIssue(w)}>Fix</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="issues-actions" style={{ marginTop: 16, display: "flex", gap: 10 }}>
+        <button className="btn primary" disabled={busy} onClick={() => {
+          // Regenerate all button also available in the issues-actions bar above
+        }}>⟳ Regenerate All</button>
+        <span className="note">Fix each issue individually to reduce period counts, then regenerate.</span>
+      </div>
+    </div>
   );
 }
 
@@ -162,7 +417,7 @@ function HeaderRow() {
   return (
     <thead>
       <tr>
-        <th className="daycol-h">Day</th>
+        <th className="daycol-h">Day / Time</th>
         {PERIOD_LABELS.map((p, i) => (
           <th key={p} className={i === INTERVAL_AFTER ? "interval-rule" : ""}>{p}</th>
         ))}
@@ -196,7 +451,7 @@ function ClassDay({ day, d, info }) {
         }
         return (
           <td key={p} className={p === INTERVAL_AFTER ? "interval-rule" : ""}
-              style={cell?.bucketId ? { background: bucketColor(cell.bucketId) } : undefined}>
+            style={cell?.bucketId ? { background: bucketColor(cell.bucketId) } : undefined}>
             <CellContent cell={cell} />
           </td>
         );
@@ -209,7 +464,7 @@ function CellContent({ cell }) {
   if (!cell) return <span className="cell empty" />;
   if (cell.subjects.length > 1) {
     return (
-      <span className={`cell bucket`}>
+      <span className="cell bucket">
         <span className="bucket-tag">Choose one</span>
         {cell.subjects.map((s, i) => (
           <span className="pick" key={i}><b>{s.subject}</b> · {short(s.teacher)}<br /></span>
@@ -230,28 +485,46 @@ function TeacherTable({ info }) {
   if (!info) return null;
   return (
     <table className="tt">
-      <HeaderRow />
+      <thead>
+        <tr>
+          <th className="daycol-h">Time</th>
+          {DAYS.map(d => <th key={d}>{d}</th>)}
+        </tr>
+      </thead>
       <tbody>
-        {DAYS.map((day, d) => (
-          <tr key={day}>
-            <td className="daycol">{day}</td>
-            {info.grid[d].map((cell, p) => (
-              <td key={p} className={p === INTERVAL_AFTER ? "interval-rule" : ""}
-                  style={cell?.[0]?.bucketId ? { background: bucketColor(cell[0].bucketId) } : undefined}>
-                {!cell ? <span className="cell empty" /> : (
-                  <span className={`cell ${cell[0].bucketId ? "bucket" : ""}`}>
-                    {groupTeacherCell(cell).map((grp, i) => (
-                      <span key={i} style={{ display: "block", marginBottom: i < arr(cell) - 1 ? 4 : 0 }}>
-                        <span className="subj">{grp.subject}</span>
-                        <span className="klass">{grp.classes.join("+")}</span>
+        {TIME_ROWS.map((row, ri) => {
+          if (row.fixed) {
+            return (
+              <tr key={ri} className="fixed-row">
+                <td className="daycol">{row.label}</td>
+                <td colSpan={5} className="fixed-cell">{row.label}</td>
+              </tr>
+            );
+          }
+          return (
+            <tr key={ri}>
+              <td className="daycol">{row.label}</td>
+              {info.grid.map((dayGrid, d) => {
+                const cell = dayGrid[row.period];
+                return (
+                  <td key={d} className={row.period === INTERVAL_AFTER ? "interval-rule" : ""}
+                    style={cell?.[0]?.bucketId ? { background: bucketColor(cell[0].bucketId) } : undefined}>
+                    {!cell ? <span className="cell empty" /> : (
+                      <span className={`cell ${cell[0].bucketId ? "bucket" : ""}`}>
+                        {groupTeacherCell(cell).map((grp, i) => (
+                          <span key={i} style={{ display: "block", marginBottom: i < groupTeacherCell(cell).length - 1 ? 4 : 0 }}>
+                            <span className="subj">{grp.subject}</span>
+                            <span className="klass">{grp.classes.join("+")}</span>
+                          </span>
+                        ))}
                       </span>
-                    ))}
-                  </span>
-                )}
-              </td>
-            ))}
-          </tr>
-        ))}
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
@@ -282,16 +555,15 @@ function Legend({ grids, sel }) {
 
 function short(name) {
   if (!name) return "";
-  return name.replace(/^Ms\.?\s*/, "").replace(/^Mr\.?\s*/, "").replace(/^New\s*/, "");
+  return name.replace(/^Ms\.?\s*/,"").replace(/^Mr\.?\s*/,"").replace(/^New\s*/,"");
 }
 
-// Distinct subjects a teacher teaches (for the "Subjects Taught" header field).
 function teacherSubjects(placements, teacher) {
   const set = new Set();
   for (const p of placements) if (p.teacher === teacher && p.subject !== "Assembly") set.add(p.subject);
   return [...set].sort().join(", ");
 }
-// The teacher's assembly day = the grade they teach most in (so their template shows it).
+
 function teacherAssemblyDay(placements, teacher) {
   const gradeCount = {};
   for (const p of placements) if (p.teacher === teacher && p.subject !== "Assembly") {
@@ -299,11 +571,10 @@ function teacherAssemblyDay(placements, teacher) {
   }
   const top = Object.entries(gradeCount).sort((a, b) => b[1] - a[1])[0];
   if (!top) return undefined;
-  return ["Grade 6", "Grade 7", "Grade 8"].includes(top[0]) ? 2
-    : ["Grade 9", "Grade 10"].includes(top[0]) ? 3 : undefined;
+  return ["Grade 6","Grade 7","Grade 8"].includes(top[0]) ? 2
+    : ["Grade 9","Grade 10","Grade 11","Grade 12"].includes(top[0]) ? 3 : undefined;
 }
 
-// Group a teacher's cell entries by subject+grade, merging classes as "6A+6B".
 function groupTeacherCell(cell) {
   const by = {};
   for (const e of cell) {
@@ -314,4 +585,3 @@ function groupTeacherCell(cell) {
   }
   return Object.values(by).map(g => ({ subject: g.subject, classes: g.classes.sort() }));
 }
-function arr(cell) { return groupTeacherCell(cell).length; }

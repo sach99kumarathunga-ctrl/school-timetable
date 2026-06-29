@@ -14,7 +14,7 @@
       "subjects": [
         {
           "subject": "English",
-          "weekly": 7,
+          "weekly": 8,
           "color": "none",
           "religionBlock": false,
           "assignments": [
@@ -23,7 +23,7 @@
               "classes": [
                 "6A"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -31,7 +31,7 @@
               "classes": [
                 "6B"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -39,7 +39,7 @@
               "classes": [
                 "6E"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -47,7 +47,7 @@
               "classes": [
                 "6F"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -55,7 +55,7 @@
               "classes": [
                 "6C"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -63,7 +63,7 @@
               "classes": [
                 "6D"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -71,7 +71,7 @@
               "classes": [
                 "6G"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             }
           ],
@@ -535,7 +535,7 @@
         {
           "subject": "PT",
           "weekly": 1,
-          "color": "none",
+          "color": "pec_g6",
           "religionBlock": false,
           "assignments": [
             {
@@ -595,7 +595,8 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": null
+          "bucketId": "pec_g6",
+          "type": "PE/Little Friends/Cub Scouts bucket"
         },
         {
           "subject": "History & Geography",
@@ -665,7 +666,7 @@
         {
           "subject": "Little Friends",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g6",
           "religionBlock": false,
           "assignments": [
             {
@@ -725,12 +726,12 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g6"
         },
         {
           "subject": "Cub Scouts",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g6",
           "religionBlock": false,
           "assignments": [
             {
@@ -790,7 +791,7 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g6"
         },
         {
           "subject": "Buddhism",
@@ -1433,14 +1434,6 @@
           ]
         },
         {
-          "id": "t4_0.60",
-          "color": "t4_0.60",
-          "subjects": [
-            "Little Friends",
-            "Cub Scouts"
-          ]
-        },
-        {
           "id": "RELIGION",
           "color": "RELIGION",
           "subjects": [
@@ -1471,6 +1464,15 @@
             "Cookery",
             "Technical skills"
           ]
+        },
+        {
+          "id": "pec_g6",
+          "color": "pec_g6",
+          "subjects": [
+            "PT",
+            "Little Friends",
+            "Cub Scouts"
+          ]
         }
       ]
     },
@@ -1487,7 +1489,7 @@
       "subjects": [
         {
           "subject": "English",
-          "weekly": 7,
+          "weekly": 8,
           "color": "none",
           "religionBlock": false,
           "assignments": [
@@ -1496,7 +1498,7 @@
               "classes": [
                 "7A"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -1504,7 +1506,7 @@
               "classes": [
                 "7B"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -1512,7 +1514,7 @@
               "classes": [
                 "7C"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -1520,7 +1522,7 @@
               "classes": [
                 "7D"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -1528,7 +1530,7 @@
               "classes": [
                 "7E"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -1536,7 +1538,7 @@
               "classes": [
                 "7F"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             }
           ],
@@ -1944,7 +1946,7 @@
         {
           "subject": "PT",
           "weekly": 1,
-          "color": "none",
+          "color": "pec_g7",
           "religionBlock": false,
           "assignments": [
             {
@@ -1996,7 +1998,8 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": null
+          "bucketId": "pec_g7",
+          "type": "PE/Little Friends/Cub Scouts bucket"
         },
         {
           "subject": "Commerce",
@@ -2115,7 +2118,7 @@
         {
           "subject": "Little Friends",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g7",
           "religionBlock": false,
           "assignments": [
             {
@@ -2167,12 +2170,12 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g7"
         },
         {
           "subject": "Cub Scouts",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g7",
           "religionBlock": false,
           "assignments": [
             {
@@ -2224,7 +2227,7 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g7"
         },
         {
           "subject": "Buddhism",
@@ -2770,14 +2773,6 @@
           ]
         },
         {
-          "id": "t4_0.60",
-          "color": "t4_0.60",
-          "subjects": [
-            "Little Friends",
-            "Cub Scouts"
-          ]
-        },
-        {
           "id": "RELIGION",
           "color": "RELIGION",
           "subjects": [
@@ -2807,6 +2802,15 @@
             "Cookery",
             "Technical skills"
           ]
+        },
+        {
+          "id": "pec_g7",
+          "color": "pec_g7",
+          "subjects": [
+            "PT",
+            "Little Friends",
+            "Cub Scouts"
+          ]
         }
       ]
     },
@@ -2823,7 +2827,7 @@
       "subjects": [
         {
           "subject": "English",
-          "weekly": 7,
+          "weekly": 8,
           "color": "none",
           "religionBlock": false,
           "assignments": [
@@ -2832,7 +2836,7 @@
               "classes": [
                 "8A"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -2840,7 +2844,7 @@
               "classes": [
                 "8B"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -2848,7 +2852,7 @@
               "classes": [
                 "8C"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -2856,7 +2860,7 @@
               "classes": [
                 "8D"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -2864,7 +2868,7 @@
               "classes": [
                 "8E"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             },
             {
@@ -2872,7 +2876,7 @@
               "classes": [
                 "8F"
               ],
-              "periods": 7,
+              "periods": 8,
               "mergedGroup": null
             }
           ],
@@ -3280,7 +3284,7 @@
         {
           "subject": "PT",
           "weekly": 1,
-          "color": "none",
+          "color": "pec_g8",
           "religionBlock": false,
           "assignments": [
             {
@@ -3332,7 +3336,8 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": null
+          "bucketId": "pec_g8",
+          "type": "PE/Little Friends/Cub Scouts bucket"
         },
         {
           "subject": "Commerce",
@@ -3451,7 +3456,7 @@
         {
           "subject": "Little Friends",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g8",
           "religionBlock": false,
           "assignments": [
             {
@@ -3503,12 +3508,12 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g8"
         },
         {
           "subject": "Cub Scouts",
           "weekly": 1,
-          "color": "t4_0.60",
+          "color": "pec_g8",
           "religionBlock": false,
           "assignments": [
             {
@@ -3560,7 +3565,7 @@
               "mergedGroup": null
             }
           ],
-          "bucketId": "t4_0.60"
+          "bucketId": "pec_g8"
         },
         {
           "subject": "Buddhism",
@@ -4106,14 +4111,6 @@
           ]
         },
         {
-          "id": "t4_0.60",
-          "color": "t4_0.60",
-          "subjects": [
-            "Little Friends",
-            "Cub Scouts"
-          ]
-        },
-        {
           "id": "RELIGION",
           "color": "RELIGION",
           "subjects": [
@@ -4143,6 +4140,15 @@
             "Cookery",
             "Technical skills"
           ]
+        },
+        {
+          "id": "pec_g8",
+          "color": "pec_g8",
+          "subjects": [
+            "PT",
+            "Little Friends",
+            "Cub Scouts"
+          ]
         }
       ]
     },
@@ -4168,7 +4174,8 @@
               "classes": [
                 "9 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             },
             {
               "teacher": "New ENG (Grade 9)",
@@ -4177,7 +4184,12 @@
                 "9 PED SCI C",
                 "9 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM"
+              ]
             },
             {
               "teacher": "Ms. Naslina",
@@ -4185,7 +4197,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4201,7 +4217,8 @@
               "classes": [
                 "9 PED SCI A"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": null
             },
             {
               "teacher": "New MAT (Grade 9)",
@@ -4210,7 +4227,12 @@
                 "9 PED SCI C",
                 "9 PED COM"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM"
+              ]
             },
             {
               "teacher": "Mr. Nilantha",
@@ -4218,7 +4240,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4235,14 +4261,19 @@
                 "9 PED SCI A",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI C"
+              ]
             },
             {
               "teacher": "Ms. Hansini",
               "classes": [
                 "9 PED SCI B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -4260,7 +4291,12 @@
                 "9 PED SCI B",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C"
+              ]
             }
           ],
           "bucketId": null
@@ -4278,7 +4314,12 @@
                 "9 PED SCI B",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C"
+              ]
             }
           ],
           "bucketId": null
@@ -4299,7 +4340,15 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM",
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4316,7 +4365,11 @@
                 "9 PED SCI A",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI C"
+              ]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4333,7 +4386,11 @@
                 "9 PED SCI A",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI C"
+              ]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4350,7 +4407,11 @@
                 "9 PED SCI A",
                 "9 PED SCI C"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI C"
+              ]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4366,7 +4427,8 @@
               "classes": [
                 "9 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4382,7 +4444,8 @@
               "classes": [
                 "9 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4398,7 +4461,8 @@
               "classes": [
                 "9 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4414,7 +4478,8 @@
               "classes": [
                 "9 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -4430,7 +4495,8 @@
               "classes": [
                 "9 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -4446,7 +4512,8 @@
               "classes": [
                 "9 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             },
             {
               "teacher": "New BUS (Grade 9)",
@@ -4454,7 +4521,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4473,7 +4544,13 @@
                 "9 PED SCI C",
                 "9 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM"
+              ]
             }
           ],
           "bucketId": "t6_0.80"
@@ -4492,7 +4569,13 @@
                 "9 PED SCI C",
                 "9 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM"
+              ]
             }
           ],
           "bucketId": "t6_0.80"
@@ -4511,7 +4594,13 @@
                 "9 PED SCI C",
                 "9 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "9 PED SCI A",
+                "9 PED SCI B",
+                "9 PED SCI C",
+                "9 PED COM"
+              ]
             }
           ],
           "bucketId": "t5_0.80"
@@ -4528,7 +4617,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4545,7 +4638,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4562,7 +4659,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4579,7 +4680,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4596,7 +4701,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4613,7 +4722,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": "t4_0.80"
@@ -4630,7 +4743,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": "t4_0.80"
@@ -4647,7 +4764,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 2
+              "periods": 2,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": "t3_0.80"
@@ -4664,7 +4785,11 @@
                 "9 NAT A",
                 "9 NAT B"
               ],
-              "periods": 2
+              "periods": 2,
+              "mergedGroup": [
+                "9 NAT A",
+                "9 NAT B"
+              ]
             }
           ],
           "bucketId": "t3_0.80"
@@ -4745,14 +4870,19 @@
                 "10 PED SCI A",
                 "10 PED SCI B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B"
+              ]
             },
             {
               "teacher": "New ENG (Grade 10)",
               "classes": [
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             },
             {
               "teacher": "Ms. Naslina",
@@ -4761,7 +4891,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -4780,7 +4915,13 @@
                 "10 PED COM",
                 "10 EXT"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B",
+                "10 PED COM",
+                "10 EXT"
+              ]
             },
             {
               "teacher": "Mr. Nilantha",
@@ -4788,7 +4929,11 @@
                 "10 NAT A",
                 "10 NAT B"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B"
+              ]
             }
           ],
           "bucketId": null
@@ -4805,7 +4950,11 @@
                 "10 PED SCI A",
                 "10 PED SCI B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B"
+              ]
             }
           ],
           "bucketId": null
@@ -4822,7 +4971,11 @@
                 "10 PED SCI A",
                 "10 PED SCI B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B"
+              ]
             }
           ],
           "bucketId": null
@@ -4839,7 +4992,11 @@
                 "10 PED SCI A",
                 "10 PED SCI B"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B"
+              ]
             }
           ],
           "bucketId": null
@@ -4860,7 +5017,15 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B",
+                "10 PED COM",
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -4877,7 +5042,11 @@
                 "10 PED SCI A",
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED COM"
+              ]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4894,7 +5063,11 @@
                 "10 PED SCI A",
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED COM"
+              ]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4910,7 +5083,8 @@
               "classes": [
                 "10 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4926,7 +5100,8 @@
               "classes": [
                 "10 PED SCI A"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4942,7 +5117,8 @@
               "classes": [
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": "t8_0.80"
@@ -4958,7 +5134,8 @@
               "classes": [
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -4974,7 +5151,8 @@
               "classes": [
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -4990,7 +5168,8 @@
               "classes": [
                 "10 PED COM"
               ],
-              "periods": 5
+              "periods": 5,
+              "mergedGroup": null
             },
             {
               "teacher": "New BUS (Grade 10)",
@@ -4999,7 +5178,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -5017,7 +5201,12 @@
                 "10 PED SCI B",
                 "10 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B",
+                "10 PED COM"
+              ]
             }
           ],
           "bucketId": "t6_0.80"
@@ -5035,7 +5224,12 @@
                 "10 PED SCI B",
                 "10 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B",
+                "10 PED COM"
+              ]
             }
           ],
           "bucketId": "t6_0.80"
@@ -5053,7 +5247,12 @@
                 "10 PED SCI B",
                 "10 PED COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "10 PED SCI A",
+                "10 PED SCI B",
+                "10 PED COM"
+              ]
             }
           ],
           "bucketId": "t5_0.80"
@@ -5071,7 +5270,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -5089,7 +5293,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -5107,7 +5316,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -5125,7 +5339,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": null
@@ -5142,14 +5361,19 @@
                 "10 NAT A",
                 "10 NAT B"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B"
+              ]
             },
             {
               "teacher": "Mr. Clive",
               "classes": [
                 "10 EXT"
               ],
-              "periods": 3
+              "periods": 3,
+              "mergedGroup": null
             }
           ],
           "bucketId": null
@@ -5167,7 +5391,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": "t4_0.80"
@@ -5185,7 +5414,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 6
+              "periods": 6,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": "t4_0.80"
@@ -5203,7 +5437,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 2
+              "periods": 2,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": "t3_0.80"
@@ -5221,7 +5460,12 @@
                 "10 NAT B",
                 "10 EXT"
               ],
-              "periods": 2
+              "periods": 2,
+              "mergedGroup": [
+                "10 NAT A",
+                "10 NAT B",
+                "10 EXT"
+              ]
             }
           ],
           "bucketId": "t3_0.80"
@@ -5290,72 +5534,81 @@
         {
           "subject": "Physics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b1",
           "religionBlock": false,
+          "bucketId": "nat_g11_b1",
           "assignments": [
             {
               "teacher": "Ms. Kavindya",
               "classes": [
-                "11 NAT SCI"
+                "11 NAT SCI",
+                "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Accounting",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b1",
           "religionBlock": false,
+          "bucketId": "nat_g11_b1",
           "assignments": [
             {
               "teacher": "Ms. Rusiri Jayakodi",
               "classes": [
+                "11 NAT SCI",
                 "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Chemistry",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b2",
           "religionBlock": false,
+          "bucketId": "nat_g11_b2",
           "assignments": [
             {
               "teacher": "Mr. Tharindu",
               "classes": [
-                "11 NAT SCI"
+                "11 NAT SCI",
+                "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Business",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b2",
           "religionBlock": false,
+          "bucketId": "nat_g11_b2",
           "assignments": [
             {
               "teacher": "Ms. Thakshila Ruwanthi",
               "classes": [
-                "11 PED COM"
+                "11 NAT SCI",
+                "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "ICT",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b2",
           "religionBlock": false,
+          "bucketId": "nat_g11_b2",
           "assignments": [
             {
               "teacher": "Ms. Hashini Dissanayake",
@@ -5363,176 +5616,197 @@
                 "11 NAT SCI",
                 "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Biology",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b3",
           "religionBlock": false,
+          "bucketId": "nat_g11_b3",
           "assignments": [
             {
               "teacher": "Ms. Charuni",
               "classes": [
-                "11 NAT SCI"
+                "11 NAT SCI",
+                "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Combined Mathematics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b3",
           "religionBlock": false,
+          "bucketId": "nat_g11_b3",
           "assignments": [
             {
               "teacher": "Ms. Nimeshika",
               "classes": [
-                "11 NAT SCI"
+                "11 NAT SCI",
+                "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Economics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g11_b3",
           "religionBlock": false,
+          "bucketId": "nat_g11_b3",
           "assignments": [
             {
               "teacher": "Ms. Ashka Wikramasinghe",
               "classes": [
+                "11 NAT SCI",
                 "11 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Economics",
+          "subject": "Economics (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b4",
           "religionBlock": false,
+          "bucketId": "ped_g11_b4",
           "assignments": [
             {
               "teacher": "Ms. Senani Jayawardena",
               "classes": [
+                "11 PED SCI",
                 "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Biology",
-          "weekly": 1,
-          "color": "none",
+          "subject": "Biology (PED)",
+          "weekly": 11,
+          "color": "ped_g11_b4",
           "religionBlock": false,
+          "bucketId": "ped_g11_b4",
           "assignments": [
             {
               "teacher": "Ms. Vidya Rajasekara",
               "classes": [
-                "11 PED SCI"
+                "11 PED SCI",
+                "11 PED COM"
               ],
-              "periods": 1
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Mathematics/c",
+          "subject": "Combined Mathematics (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b4",
           "religionBlock": false,
+          "bucketId": "ped_g11_b4",
           "assignments": [
             {
               "teacher": "Mr. Chinthaka Herath",
               "classes": [
-                "11 PED SCI"
+                "11 PED SCI",
+                "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Physics",
+          "subject": "Physics (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b5",
           "religionBlock": false,
+          "bucketId": "ped_g11_b5",
           "assignments": [
             {
               "teacher": "Mr. Radun",
               "classes": [
-                "11 PED SCI"
+                "11 PED SCI",
+                "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Accounting",
+          "subject": "Accounting (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b5",
           "religionBlock": false,
+          "bucketId": "ped_g11_b5",
           "assignments": [
             {
               "teacher": "Mr. Sanjeewa Narayana",
               "classes": [
+                "11 PED SCI",
                 "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Chemistry",
+          "subject": "Chemistry (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b6",
           "religionBlock": false,
+          "bucketId": "ped_g11_b6",
           "assignments": [
             {
               "teacher": "Ms. Hasini Rathnathilake",
               "classes": [
-                "11 PED SCI"
+                "11 PED SCI",
+                "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Business",
+          "subject": "Business (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b6",
           "religionBlock": false,
+          "bucketId": "ped_g11_b6",
           "assignments": [
             {
               "teacher": "Ms. Rusiri Jayakodi",
               "classes": [
-                "11 PED SCI"
+                "11 PED SCI",
+                "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Information Technology",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g11_b6",
           "religionBlock": false,
+          "bucketId": "ped_g11_b6",
           "assignments": [
             {
               "teacher": "New TE (Grade 11)",
@@ -5540,162 +5814,454 @@
                 "11 PED SCI",
                 "11 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "PE",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "NEW PHE 2 (Grade 11)",
-              "classes": [
-                "11 NAT SCI",
-                "11 NAT COM"
-              ],
-              "periods": 1
+              "classes": ["11 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 PED SCI"]
             },
             {
               "teacher": "NEW PHE 2 (Grade 11)",
-              "classes": [
-                "11 PED SCI",
-                "11 PED COM"
-              ],
-              "periods": 1
+              "classes": ["11 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["11 PED COM"]
+            },
+            {
+              "teacher": "NEW PHE 2 (Grade 11)",
+              "classes": ["11 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT SCI"]
+            },
+            {
+              "teacher": "NEW PHE 2 (Grade 11)",
+              "classes": ["11 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "EM , WM, CUD, Art (1)",
+          "subject": "Eastern Music",
           "weekly": 1,
-          "color": "ALBUCKET",
+          "color": "g11_act",
           "religionBlock": false,
+          "bucketId": "g11_act",
           "assignments": [
             {
-              "teacher": "Mr. Shehan/Ms. Savini/Ms. Pulakshika, CUD TE",
+              "teacher": "Mr. Shehan",
               "classes": [
+                "11 PED SCI",
+                "11 PED COM",
                 "11 NAT SCI",
                 "11 NAT COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": "ALBUCKET"
+          ]
+        },
+        {
+          "subject": "Western Music",
+          "weekly": 1,
+          "color": "g11_act",
+          "religionBlock": false,
+          "bucketId": "g11_act",
+          "assignments": [
+            {
+              "teacher": "Ms. Savini",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Art",
+          "weekly": 1,
+          "color": "g11_act",
+          "religionBlock": false,
+          "bucketId": "g11_act",
+          "assignments": [
+            {
+              "teacher": "Ms. Pulakshika",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Cultural Dancing",
+          "weekly": 1,
+          "color": "g11_act",
+          "religionBlock": false,
+          "bucketId": "g11_act",
+          "assignments": [
+            {
+              "teacher": "New CUD 1 (Grade 11)",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Library",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "bucketId": null,
+          "assignments": [
+            {
+              "teacher": "New LIB (Grade 11)",
+              "classes": ["11 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 PED SCI"]
+            },
+            {
+              "teacher": "New LIB (Grade 11)",
+              "classes": ["11 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["11 PED COM"]
+            },
+            {
+              "teacher": "New LIB (Grade 11)",
+              "classes": ["11 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT SCI"]
+            },
+            {
+              "teacher": "New LIB (Grade 11)",
+              "classes": ["11 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT COM"]
+            }
+          ]
+        },
+        {
+          "subject": "Buddhism",
+          "weekly": 1,
+          "color": "g11_rel",
+          "religionBlock": false,
+          "bucketId": "g11_rel",
+          "assignments": [
+            {
+              "teacher": "New BUD 2 (Grade 11)",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Hinduism",
+          "weekly": 1,
+          "color": "g11_rel",
+          "religionBlock": false,
+          "bucketId": "g11_rel",
+          "assignments": [
+            {
+              "teacher": "New HIN (Grade 11)",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Islam",
+          "weekly": 1,
+          "color": "g11_rel",
+          "religionBlock": false,
+          "bucketId": "g11_rel",
+          "assignments": [
+            {
+              "teacher": "Mr. Jabir",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Catholicism",
+          "weekly": 1,
+          "color": "g11_rel",
+          "religionBlock": false,
+          "bucketId": "g11_rel",
+          "assignments": [
+            {
+              "teacher": "New RCA (Grade 11)",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Christianity",
+          "weekly": 1,
+          "color": "g11_rel",
+          "religionBlock": false,
+          "bucketId": "g11_rel",
+          "assignments": [
+            {
+              "teacher": "New CHR (Grade 11)",
+              "classes": [
+                "11 PED SCI",
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Peer Tutoring",
+          "weekly": 2,
+          "color": "none",
+          "religionBlock": false,
+          "bucketId": null,
+          "assignments": [
+            {
+              "teacher": "New PTR (Grade 11)",
+              "classes": ["11 PED SCI"],
+              "periods": 2,
+              "mergedGroup": ["11 PED SCI"]
+            },
+            {
+              "teacher": "New PTR (Grade 11)",
+              "classes": ["11 PED COM"],
+              "periods": 2,
+              "mergedGroup": ["11 PED COM"]
+            },
+            {
+              "teacher": "New PTR (Grade 11)",
+              "classes": ["11 NAT SCI"],
+              "periods": 2,
+              "mergedGroup": ["11 NAT SCI"]
+            },
+            {
+              "teacher": "New PTR (Grade 11)",
+              "classes": ["11 NAT COM"],
+              "periods": 2,
+              "mergedGroup": ["11 NAT COM"]
+            }
+          ]
         },
         {
           "subject": "Motivational",
           "weekly": 2,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "Mr. Chinthaka",
               "classes": [
+                "11 PED SCI",
+                "11 PED COM",
                 "11 NAT SCI",
                 "11 NAT COM"
               ],
-              "periods": 2
-            },
-            {
-              "teacher": "Mr. Chinthaka",
-              "classes": [
+              "periods": 2,
+              "mergedGroup": [
                 "11 PED SCI",
-                "11 PED COM"
-              ],
-              "periods": 2
+                "11 PED COM",
+                "11 NAT SCI",
+                "11 NAT COM"
+              ]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "General English",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "Ms. Vindya",
-              "classes": [
-                "11 NAT SCI",
-                "11 NAT COM"
-              ],
-              "periods": 1
+              "classes": ["11 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 PED SCI"]
+            },
+            {
+              "teacher": "Ms. Vindya",
+              "classes": ["11 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["11 PED COM"]
+            },
+            {
+              "teacher": "Ms. Vindya",
+              "classes": ["11 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT SCI"]
+            },
+            {
+              "teacher": "Ms. Vindya",
+              "classes": ["11 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Effective Speech",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "11 NAT SCI",
-                "11 NAT COM"
-              ],
-              "periods": 1
+              "classes": ["11 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 PED SCI"]
             },
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "11 PED SCI",
-                "11 PED COM"
-              ],
-              "periods": 1
-            }
-          ],
-          "bucketId": null
-        },
-        {
-          "subject": "EM , WM, CUD, Art (1)",
-          "weekly": 1,
-          "color": "ALBUCKET",
-          "religionBlock": false,
-          "assignments": [
-            {
-              "teacher": "Mr. Shehan/Ms. Savini/Ms. Pulakshika,CUD TE",
-              "classes": [
-                "11 PED SCI",
-                "11 PED COM"
-              ],
-              "periods": 1
-            }
-          ],
-          "bucketId": "ALBUCKET"
-        },
-        {
-          "subject": "Recriational",
-          "weekly": 1,
-          "color": "none",
-          "religionBlock": false,
-          "assignments": [
+              "classes": ["11 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["11 PED COM"]
+            },
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "11 PED SCI",
-                "11 PED COM"
-              ],
-              "periods": 1
+              "classes": ["11 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT SCI"]
+            },
+            {
+              "teacher": "Ms. Shiremila",
+              "classes": ["11 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["11 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         }
       ],
       "buckets": [
         {
-          "id": "ALBUCKET",
-          "color": "ALBUCKET",
+          "id": "nat_g11_b1",
+          "color": "nat_g11_b1",
           "subjects": [
-            "EM , WM, CUD, Art (1)",
-            "EM , WM, CUD, Art (1)"
+            "Physics",
+            "Accounting"
+          ]
+        },
+        {
+          "id": "nat_g11_b2",
+          "color": "nat_g11_b2",
+          "subjects": [
+            "Chemistry",
+            "Business",
+            "ICT"
+          ]
+        },
+        {
+          "id": "nat_g11_b3",
+          "color": "nat_g11_b3",
+          "subjects": [
+            "Biology",
+            "Combined Mathematics",
+            "Economics"
+          ]
+        },
+        {
+          "id": "ped_g11_b4",
+          "color": "ped_g11_b4",
+          "subjects": [
+            "Economics (PED)",
+            "Biology (PED)",
+            "Combined Mathematics (PED)"
+          ]
+        },
+        {
+          "id": "ped_g11_b5",
+          "color": "ped_g11_b5",
+          "subjects": [
+            "Physics (PED)",
+            "Accounting (PED)"
+          ]
+        },
+        {
+          "id": "ped_g11_b6",
+          "color": "ped_g11_b6",
+          "subjects": [
+            "Chemistry (PED)",
+            "Business (PED)",
+            "Information Technology"
+          ]
+        },
+        {
+          "id": "g11_act",
+          "color": "g11_act",
+          "subjects": [
+            "Eastern Music",
+            "Western Music",
+            "Art",
+            "Cultural Dancing"
+          ]
+        },
+        {
+          "id": "g11_rel",
+          "color": "g11_rel",
+          "subjects": [
+            "Buddhism",
+            "Hinduism",
+            "Islam",
+            "Catholicism",
+            "Christianity"
           ]
         }
       ]
@@ -5712,106 +6278,171 @@
         {
           "subject": "Physics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b1",
           "religionBlock": false,
+          "bucketId": "nat_g12_b1",
           "assignments": [
             {
               "teacher": "Ms. Kavindya",
               "classes": [
-                "12 NAT SCI"
+                "12 NAT SCI",
+                "12 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
+        },
+        {
+          "subject": "Accounting",
+          "weekly": 11,
+          "color": "nat_g12_b1",
+          "religionBlock": false,
+          "bucketId": "nat_g12_b1",
+          "assignments": [
+            {
+              "teacher": "Ms. Rusiri Jayakodi",
+              "classes": [
+                "12 NAT SCI",
+                "12 NAT COM"
+              ],
+              "periods": 11,
+              "mergedGroup": null
+            }
+          ]
         },
         {
           "subject": "Chemistry",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b2",
           "religionBlock": false,
+          "bucketId": "nat_g12_b2",
           "assignments": [
             {
               "teacher": "Mr. Tharindu",
               "classes": [
-                "12 NAT SCI"
+                "12 NAT SCI",
+                "12 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
+        },
+        {
+          "subject": "Business",
+          "weekly": 11,
+          "color": "nat_g12_b2",
+          "religionBlock": false,
+          "bucketId": "nat_g12_b2",
+          "assignments": [
+            {
+              "teacher": "Ms. Thakshila Ruwanthi",
+              "classes": [
+                "12 NAT SCI",
+                "12 NAT COM"
+              ],
+              "periods": 11,
+              "mergedGroup": null
+            }
+          ]
         },
         {
           "subject": "ICT",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b2",
           "religionBlock": false,
+          "bucketId": "nat_g12_b2",
           "assignments": [
             {
               "teacher": "Ms. Hashini Dissanayake",
               "classes": [
-                "12 PED SCI",
                 "12 NAT SCI",
-                "12 PED COM"
+                "12 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Biology",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b3",
           "religionBlock": false,
+          "bucketId": "nat_g12_b3",
           "assignments": [
             {
               "teacher": "Ms. Charuni",
               "classes": [
-                "12 NAT SCI"
+                "12 NAT SCI",
+                "12 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Combined Mathematics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b3",
           "religionBlock": false,
+          "bucketId": "nat_g12_b3",
           "assignments": [
             {
               "teacher": "Ms. Nimeshika",
               "classes": [
-                "12 NAT SCI"
+                "12 NAT SCI",
+                "12 NAT COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Economics",
           "weekly": 11,
-          "color": "none",
+          "color": "nat_g12_b3",
           "religionBlock": false,
+          "bucketId": "nat_g12_b3",
+          "assignments": [
+            {
+              "teacher": "Ms. Ashka Wikramasinghe",
+              "classes": [
+                "12 NAT SCI",
+                "12 NAT COM"
+              ],
+              "periods": 11,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Economics (PED)",
+          "weekly": 11,
+          "color": "ped_g12_b4",
+          "religionBlock": false,
+          "bucketId": "ped_g12_b4",
           "assignments": [
             {
               "teacher": "Ms. Senani Jayawardena",
               "classes": [
+                "12 PED SCI",
                 "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Biology",
-          "weekly": 1,
-          "color": "none",
+          "subject": "Biology (PED)",
+          "weekly": 11,
+          "color": "ped_g12_b4",
           "religionBlock": false,
+          "bucketId": "ped_g12_b4",
           "assignments": [
             {
               "teacher": "Ms. Vidya Rajasekara",
@@ -5819,238 +6450,562 @@
                 "12 PED SCI",
                 "12 PED COM"
               ],
-              "periods": 1
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Mathematics/c",
+          "subject": "Combined Mathematics (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g12_b4",
           "religionBlock": false,
+          "bucketId": "ped_g12_b4",
           "assignments": [
             {
               "teacher": "Mr. Chinthaka Herath",
               "classes": [
-                "12 PED SCI"
+                "12 PED SCI",
+                "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Physics",
+          "subject": "Physics (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g12_b5",
           "religionBlock": false,
+          "bucketId": "ped_g12_b5",
           "assignments": [
             {
               "teacher": "Mr. Radun",
               "classes": [
-                "12 PED SCI"
+                "12 PED SCI",
+                "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Accounting",
+          "subject": "Accounting (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g12_b5",
           "religionBlock": false,
+          "bucketId": "ped_g12_b5",
           "assignments": [
             {
               "teacher": "Mr. Sanjeewa Narayana",
               "classes": [
-                "12 NAT SCI"
+                "12 PED SCI",
+                "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "Chemistry",
+          "subject": "Chemistry (PED)",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g12_b6",
           "religionBlock": false,
+          "bucketId": "ped_g12_b6",
           "assignments": [
             {
               "teacher": "Ms. Hasini Rathnathilake",
               "classes": [
-                "12 PED SCI"
+                "12 PED SCI",
+                "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
+        },
+        {
+          "subject": "Business (PED)",
+          "weekly": 11,
+          "color": "ped_g12_b6",
+          "religionBlock": false,
+          "bucketId": "ped_g12_b6",
+          "assignments": [
+            {
+              "teacher": "Ms. Rusiri Jayakodi",
+              "classes": [
+                "12 PED SCI",
+                "12 PED COM"
+              ],
+              "periods": 11,
+              "mergedGroup": null
+            }
+          ]
         },
         {
           "subject": "Information Technology",
           "weekly": 11,
-          "color": "none",
+          "color": "ped_g12_b6",
           "religionBlock": false,
+          "bucketId": "ped_g12_b6",
           "assignments": [
             {
               "teacher": "New TE (Grade 12)",
               "classes": [
                 "12 PED SCI",
-                "12 NAT SCI"
+                "12 PED COM"
               ],
-              "periods": 11
+              "periods": 11,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "PE",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "NEW PHE 2 (Grade 12)",
-              "classes": [
-                "12 NAT SCI"
-              ],
-              "periods": 1
+              "classes": ["12 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 PED SCI"]
             },
             {
               "teacher": "NEW PHE 2 (Grade 12)",
-              "classes": [
-                "12 PED SCI",
-                "12 PED COM"
-              ],
-              "periods": 1
+              "classes": ["12 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT SCI"]
+            },
+            {
+              "teacher": "NEW PHE 2 (Grade 12)",
+              "classes": ["12 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["12 PED COM"]
+            },
+            {
+              "teacher": "NEW PHE 2 (Grade 12)",
+              "classes": ["12 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "EM , WM, CUD, Art (1)",
+          "subject": "Eastern Music",
           "weekly": 1,
-          "color": "ALBUCKET",
+          "color": "g12_act",
           "religionBlock": false,
+          "bucketId": "g12_act",
           "assignments": [
             {
-              "teacher": "Mr. Shehan/Ms. Savini/Ms. Pulakshika, CUD TE",
+              "teacher": "Mr. Shehan",
               "classes": [
-                "12 NAT SCI"
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
               ],
-              "periods": 1
+              "periods": 1,
+              "mergedGroup": null
             }
-          ],
-          "bucketId": "ALBUCKET"
+          ]
+        },
+        {
+          "subject": "Western Music",
+          "weekly": 1,
+          "color": "g12_act",
+          "religionBlock": false,
+          "bucketId": "g12_act",
+          "assignments": [
+            {
+              "teacher": "Ms. Savini",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Art",
+          "weekly": 1,
+          "color": "g12_act",
+          "religionBlock": false,
+          "bucketId": "g12_act",
+          "assignments": [
+            {
+              "teacher": "Ms. Pulakshika",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Cultural Dancing",
+          "weekly": 1,
+          "color": "g12_act",
+          "religionBlock": false,
+          "bucketId": "g12_act",
+          "assignments": [
+            {
+              "teacher": "New CUD 1 (Grade 12)",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Library",
+          "weekly": 1,
+          "color": "none",
+          "religionBlock": false,
+          "bucketId": null,
+          "assignments": [
+            {
+              "teacher": "New LIB (Grade 12)",
+              "classes": ["12 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 PED SCI"]
+            },
+            {
+              "teacher": "New LIB (Grade 12)",
+              "classes": ["12 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT SCI"]
+            },
+            {
+              "teacher": "New LIB (Grade 12)",
+              "classes": ["12 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["12 PED COM"]
+            },
+            {
+              "teacher": "New LIB (Grade 12)",
+              "classes": ["12 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT COM"]
+            }
+          ]
+        },
+        {
+          "subject": "Buddhism",
+          "weekly": 1,
+          "color": "g12_rel",
+          "religionBlock": false,
+          "bucketId": "g12_rel",
+          "assignments": [
+            {
+              "teacher": "New BUD 2 (Grade 12)",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Hinduism",
+          "weekly": 1,
+          "color": "g12_rel",
+          "religionBlock": false,
+          "bucketId": "g12_rel",
+          "assignments": [
+            {
+              "teacher": "New HIN (Grade 12)",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Islam",
+          "weekly": 1,
+          "color": "g12_rel",
+          "religionBlock": false,
+          "bucketId": "g12_rel",
+          "assignments": [
+            {
+              "teacher": "Mr. Jabir",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Catholicism",
+          "weekly": 1,
+          "color": "g12_rel",
+          "religionBlock": false,
+          "bucketId": "g12_rel",
+          "assignments": [
+            {
+              "teacher": "New RCA (Grade 12)",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Christianity",
+          "weekly": 1,
+          "color": "g12_rel",
+          "religionBlock": false,
+          "bucketId": "g12_rel",
+          "assignments": [
+            {
+              "teacher": "New CHR (Grade 12)",
+              "classes": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ],
+              "periods": 1,
+              "mergedGroup": null
+            }
+          ]
+        },
+        {
+          "subject": "Peer Tutoring",
+          "weekly": 2,
+          "color": "none",
+          "religionBlock": false,
+          "bucketId": null,
+          "assignments": [
+            {
+              "teacher": "New PTR (Grade 12)",
+              "classes": ["12 PED SCI"],
+              "periods": 2,
+              "mergedGroup": ["12 PED SCI"]
+            },
+            {
+              "teacher": "New PTR (Grade 12)",
+              "classes": ["12 NAT SCI"],
+              "periods": 2,
+              "mergedGroup": ["12 NAT SCI"]
+            },
+            {
+              "teacher": "New PTR (Grade 12)",
+              "classes": ["12 PED COM"],
+              "periods": 2,
+              "mergedGroup": ["12 PED COM"]
+            },
+            {
+              "teacher": "New PTR (Grade 12)",
+              "classes": ["12 NAT COM"],
+              "periods": 2,
+              "mergedGroup": ["12 NAT COM"]
+            }
+          ]
         },
         {
           "subject": "Motivational",
           "weekly": 2,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
-            {
-              "teacher": "Mr. Chinthaka",
-              "classes": [
-                "12 NAT SCI"
-              ],
-              "periods": 2
-            },
             {
               "teacher": "Mr. Chinthaka",
               "classes": [
                 "12 PED SCI",
-                "12 PED COM"
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
               ],
-              "periods": 2
+              "periods": 2,
+              "mergedGroup": [
+                "12 PED SCI",
+                "12 NAT SCI",
+                "12 PED COM",
+                "12 NAT COM"
+              ]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
-          "subject": "General English",
+          "subject": "Recreational",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
-              "teacher": "Ms. Vindya",
-              "classes": [
-                "12 NAT SCI"
-              ],
-              "periods": 1
+              "teacher": "Ms. Shiremila",
+              "classes": ["12 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 PED SCI"]
+            },
+            {
+              "teacher": "Ms. Shiremila",
+              "classes": ["12 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT SCI"]
+            },
+            {
+              "teacher": "Ms. Shiremila",
+              "classes": ["12 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["12 PED COM"]
+            },
+            {
+              "teacher": "Ms. Shiremila",
+              "classes": ["12 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         },
         {
           "subject": "Effective Speech",
           "weekly": 1,
           "color": "none",
           "religionBlock": false,
+          "bucketId": null,
           "assignments": [
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "12 NAT SCI"
-              ],
-              "periods": 1
+              "classes": ["12 PED SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 PED SCI"]
             },
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "12 PED SCI",
-                "12 PED COM"
-              ],
-              "periods": 1
-            }
-          ],
-          "bucketId": null
-        },
-        {
-          "subject": "EM , WM, CUD, Art (1)",
-          "weekly": 1,
-          "color": "ALBUCKET",
-          "religionBlock": false,
-          "assignments": [
-            {
-              "teacher": "Mr. Shehan/Ms. Savini/Ms. Pulakshika,CUD TE",
-              "classes": [
-                "12 PED SCI",
-                "12 PED COM"
-              ],
-              "periods": 1
-            }
-          ],
-          "bucketId": "ALBUCKET"
-        },
-        {
-          "subject": "Recriational",
-          "weekly": 1,
-          "color": "none",
-          "religionBlock": false,
-          "assignments": [
+              "classes": ["12 NAT SCI"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT SCI"]
+            },
             {
               "teacher": "Ms. Shiremila",
-              "classes": [
-                "12 PED SCI",
-                "12 PED COM"
-              ],
-              "periods": 1
+              "classes": ["12 PED COM"],
+              "periods": 1,
+              "mergedGroup": ["12 PED COM"]
+            },
+            {
+              "teacher": "Ms. Shiremila",
+              "classes": ["12 NAT COM"],
+              "periods": 1,
+              "mergedGroup": ["12 NAT COM"]
             }
-          ],
-          "bucketId": null
+          ]
         }
       ],
       "buckets": [
         {
-          "id": "ALBUCKET",
-          "color": "ALBUCKET",
+          "id": "nat_g12_b1",
+          "color": "nat_g12_b1",
           "subjects": [
-            "EM , WM, CUD, Art (1)",
-            "EM , WM, CUD, Art (1)"
+            "Physics",
+            "Accounting"
+          ]
+        },
+        {
+          "id": "nat_g12_b2",
+          "color": "nat_g12_b2",
+          "subjects": [
+            "Chemistry",
+            "Business",
+            "ICT"
+          ]
+        },
+        {
+          "id": "nat_g12_b3",
+          "color": "nat_g12_b3",
+          "subjects": [
+            "Biology",
+            "Combined Mathematics",
+            "Economics"
+          ]
+        },
+        {
+          "id": "ped_g12_b4",
+          "color": "ped_g12_b4",
+          "subjects": [
+            "Economics (PED)",
+            "Biology (PED)",
+            "Combined Mathematics (PED)"
+          ]
+        },
+        {
+          "id": "ped_g12_b5",
+          "color": "ped_g12_b5",
+          "subjects": [
+            "Physics (PED)",
+            "Accounting (PED)"
+          ]
+        },
+        {
+          "id": "ped_g12_b6",
+          "color": "ped_g12_b6",
+          "subjects": [
+            "Chemistry (PED)",
+            "Business (PED)",
+            "Information Technology"
+          ]
+        },
+        {
+          "id": "g12_act",
+          "color": "g12_act",
+          "subjects": [
+            "Eastern Music",
+            "Western Music",
+            "Art",
+            "Cultural Dancing"
+          ]
+        },
+        {
+          "id": "g12_rel",
+          "color": "g12_rel",
+          "subjects": [
+            "Buddhism",
+            "Hinduism",
+            "Islam",
+            "Catholicism",
+            "Christianity"
           ]
         }
       ]

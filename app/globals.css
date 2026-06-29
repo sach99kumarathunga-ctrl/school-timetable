@@ -171,6 +171,36 @@ select { min-width: 180px; }
   font-family: "Fraunces", serif; font-style: italic; font-size: 13px;
 }
 
+/* Teacher search bar */
+.teacher-search { position: relative; min-width: 260px; }
+.teacher-search input {
+  font: inherit; font-size: 13px; padding: 7px 12px;
+  border: 1px solid var(--rule-strong); border-radius: 8px;
+  background: var(--paper-2); color: var(--ink); width: 100%;
+  outline: none;
+}
+.teacher-search input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.teacher-results, .search-results {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 30;
+  max-height: 280px; overflow-y: auto;
+  background: var(--paper-2); border: 1px solid var(--rule-strong);
+  border-radius: 0 0 8px 8px; box-shadow: var(--shadow);
+  margin-top: 2px;
+}
+.teacher-results button, .search-results button {
+  display: block; width: 100%; text-align: left;
+  font: inherit; font-size: 13px; padding: 8px 12px;
+  border: 0; background: transparent; cursor: pointer;
+  color: var(--ink); border-bottom: 1px solid var(--rule);
+}
+.teacher-results button:last-child, .search-results button:last-child { border-bottom: 0; }
+.teacher-results button:hover, .search-results button:hover { background: var(--accent-soft); }
+.teacher-results button.active, .search-results button.active { background: var(--accent); color: #fff; }
+.no-match { display: block; padding: 10px 12px; font-size: 13px; color: var(--ink-soft); }
+
+/* Teacher timetable fixed rows */
+.fixed-row td { background: #c0c0c0; color: #000; text-align: center; font-weight: 600; font-size: 13px; padding: 7px; }
+
 /* Editor class-picker chips for merge editing */
 .classpick { display: flex; flex-wrap: wrap; gap: 4px; }
 .chip { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; padding: 2px 6px;
@@ -181,3 +211,52 @@ select { min-width: 180px; }
 .addmini { margin-left: 4px; border: 1px solid var(--accent); color: var(--accent); background: #fff;
   border-radius: 5px; width: 22px; height: 22px; cursor: pointer; font-size: 14px; line-height: 1; }
 .addmini:hover { background: var(--accent); color: #fff; }
+
+/* Issues / Conflicts panel */
+.gradetabs button.has-issues {
+  color: #ffe066; border-bottom-color: #ffe066;
+}
+.gradetabs button.has-issues[aria-selected="true"] {
+  color: #fff; background: rgba(255,224,102,.2); border-bottom-color: #ffe066;
+}
+.issues-panel { padding: 4px 0; }
+.issues-panel h2 { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; margin: 0 0 4px; }
+.issues-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+.issues-table th, .issues-table td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; }
+.issues-table th { background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.issues-table .num { text-align: center; }
+.issue-type { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+.issue-type.bucket { background: #fff7b8; color: #7c6a00; }
+.issue-type.lesson { background: #fbeae6; color: #7c2d1b; }
+.fix-btn { font-size: 12px !important; padding: 3px 12px !important; }
+.issues-actions { display: flex; align-items: center; gap: 10px; }
+
+/* Message bar */
+.msg { margin: 10px 0; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 13px; cursor: pointer; }
+
+/* Alt options */
+.alt-options { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+
+/* Class search within grade seg */
+.seg { display: inline-flex; align-items: stretch; }
+.class-search-wrap { position: relative; display: inline-flex; align-items: center; border-left: 1px solid var(--rule); }
+.class-search-wrap input {
+  font: inherit; font-size: 13px; padding: 7px 12px; border: 0; background: transparent;
+  color: var(--ink); outline: none; min-width: 130px;
+}
+.class-search-wrap input:focus { background: var(--accent-soft); }
+.search-results {
+  position: absolute; top: 100%; left: 0; z-index: 30; min-width: 220px;
+  max-height: 260px; overflow-y: auto;
+  background: var(--paper-2); border: 1px solid var(--rule-strong);
+  border-radius: 0 0 8px 8px; box-shadow: var(--shadow); margin-top: 2px;
+}
+.search-results button {
+  display: block; width: 100%; text-align: left;
+  font: inherit; font-size: 13px; padding: 8px 12px;
+  border: 0; background: transparent; cursor: pointer;
+  color: var(--ink); border-bottom: 1px solid var(--rule);
+}
+.search-results button:last-child { border-bottom: 0; }
+.search-results button:hover { background: var(--accent-soft); }
+.search-results button.active { background: var(--accent); color: #fff; }
