@@ -120,7 +120,8 @@ export default function EditPage() {
               </button>
             ))}
           </div>
-          <a className="editlink" href="/">← Back to timetables</a>
+          <a className="editlink" href="/buckets">Buckets →</a>
+          <a className="editlink" href="/">← Timetables</a>
         </div>
       </nav>
 

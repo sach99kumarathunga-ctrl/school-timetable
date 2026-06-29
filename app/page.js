@@ -224,7 +224,8 @@ export default function Page() {
               Issues {data.warnings?.length > 0 ? `(${data.warnings.length})` : ""}
             </button>
           </div>
-          <a className="editlink" href="/edit">Edit data →</a>
+          <a className="editlink" href="/edit">Edit data</a>
+          <a className="editlink" href="/buckets" style={{ marginLeft: 8 }}>Buckets</a>
         </div>
       </nav>
 
