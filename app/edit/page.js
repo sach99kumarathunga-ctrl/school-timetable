@@ -79,12 +79,15 @@ export default function EditPage() {
     setBusy(false);
   }
   async function regenerate() {
-    setBusy(true); setStatus("Generating timetable… (can take ~30–60s)");
+    setBusy(true); setStatus("Regenerating timetable… (can take ~30–60s)");
     try {
-      const r = await fetch("/api/generate", { method: "POST" });
+      const r = await fetch("/api/regenerate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: { grades } }) });
       const d = await r.json();
-      setStatus(d.ok ? `Generated: ${d.status} (${d.count} placements)` : `Generate failed: ${d.reason}`);
-    } catch (e) { setStatus("Generate failed: " + e); }
+      if (!d.ok) { setStatus("Regenerate failed: " + (d.reason || "unknown")); setBusy(false); return; }
+      const save = await fetch("/api/timetable/save", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ placements: d.placements, warnings: d.warnings, status: "generated", createdAt: new Date().toISOString() }) });
+      const sd = await save.json();
+      setStatus(sd.saved ? `Regenerated ✓ ${d.placements.length} placements, ${d.warnings.length} warnings` : ("Regenerated but save: " + (sd.reason || "?")));
+    } catch (e) { setStatus("Regenerate failed: " + e); }
     setBusy(false);
   }
 
