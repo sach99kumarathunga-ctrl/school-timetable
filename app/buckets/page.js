@@ -182,13 +182,14 @@ export default function BucketsPage() {
       rebuildGradeBuckets(grade, st.buckets);
     }
     setGrades(nextG);
-    setBusy(true); setStatus("Regenerating timetable… (can take ~30–60s)");
+    setBusy(true); setStatus("Regenerating…");
     try {
       const r = await fetch("/api/regenerate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model: { grades: nextG } }),
       });
+      if (!r.ok) { const t = await r.text().catch(() => ""); setStatus("Regenerate failed (HTTP " + r.status + "): " + t.slice(0, 100)); setBusy(false); return; }
       const d = await r.json();
       if (!d.ok) { setStatus("Regenerate failed: " + (d.reason || "unknown")); setBusy(false); return; }
       const save = await fetch("/api/timetable/save", {
