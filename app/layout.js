@@ -1,4 +1,5 @@
 import "./globals.css";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export const metadata = {
   title: "School Timetable",
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body><ErrorBoundary>{children}</ErrorBoundary></body>
     </html>
   );
 }
