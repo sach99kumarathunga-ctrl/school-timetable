@@ -17,13 +17,16 @@ export async function POST() {
     }
 
     const result = generate({ grades });
+    const warnings = result.warnings.map(w =>
+      typeof w === "string" ? w : `${w.grade} ${w.subject} (${w.teacher}) — ${w.short} period(s) short`
+    );
     await saveTimetable({
       placements: result.placements,
       DAYS: result.DAYS,
       PPD: result.PPD,
       INTERVAL_AFTER: result.INTERVAL_AFTER,
       status: "FEASIBLE",
-      warnings: result.warnings,
+      warnings,
     });
 
     return Response.json({

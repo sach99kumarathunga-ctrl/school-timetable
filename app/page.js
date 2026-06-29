@@ -128,7 +128,7 @@ export default function Page() {
         {data.warnings?.length > 0 && (
           <div className="warns">
             <b>{data.warnings.length} period(s) could not be auto-placed.</b> These need a manual slot:
-            <ul>{data.warnings.slice(0, 8).map((w, i) => <li key={i}>{w}</li>)}</ul>
+            <ul>{data.warnings.slice(0, 8).map((w, i) => <li key={i}>{typeof w === "string" ? w : `${w.grade} ${w.subject} (${w.teacher}) — ${w.short} period(s) short`}</li>)}</ul>
           </div>
         )}
 
