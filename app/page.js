@@ -284,23 +284,17 @@ export default function Page() {
               )}
             </div>
           )}
+          <button className="btn primary" disabled={busy} onClick={regenerateAll}>
+            ⟳ Regenerate All
+          </button>
           {isIssues && (
-            <div className="issues-actions">
-              <button className="btn primary" disabled={busy} onClick={regenerateAll}>
-                ⟳ Regenerate All
-              </button>
-              <button className="btn" onClick={() => setAltOptions(!altOptions)}>
-                ⚙ Alternative Options
-              </button>
-            </div>
+            <button className="btn" onClick={() => setAltOptions(!altOptions)}>
+              ⚙ Alternative Options
+            </button>
           )}
           <div className="spacer" />
-          {!isIssues && (
-            <>
-              <button className="btn" disabled={busy} onClick={() => doExport("pdf")}>Download PDF</button>
-              <button className="btn primary" disabled={busy} onClick={() => doExport("xlsx")}>Download Excel</button>
-            </>
-          )}
+          <button className="btn" disabled={busy} onClick={() => doExport("pdf")}>Download PDF</button>
+          <button className="btn primary" disabled={busy} onClick={() => doExport("xlsx")}>Download Excel</button>
         </div>
       </div>
 
