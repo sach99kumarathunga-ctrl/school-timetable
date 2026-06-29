@@ -4361,15 +4361,15 @@
           "assignments": [
             {
               "teacher": "Ms. Sachini",
-              "classes": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B"],
               "periods": 5,
-              "mergedGroup": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ]
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B"]
+            },
+            {
+              "teacher": "Ms. Sachini",
+              "classes": ["9 PED SCI C", "9 PED COM"],
+              "periods": 5,
+              "mergedGroup": ["9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4382,15 +4382,15 @@
           "assignments": [
             {
               "teacher": "Ms. Virani",
-              "classes": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B"],
               "periods": 5,
-              "mergedGroup": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ]
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B"]
+            },
+            {
+              "teacher": "Ms. Virani",
+              "classes": ["9 PED SCI C", "9 PED COM"],
+              "periods": 5,
+              "mergedGroup": ["9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4403,15 +4403,15 @@
           "assignments": [
             {
               "teacher": "Ms. Disna",
-              "classes": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B"],
               "periods": 5,
-              "mergedGroup": [
-                "9 PED SCI A",
-                "9 PED SCI C"
-              ]
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B"]
+            },
+            {
+              "teacher": "Ms. Disna",
+              "classes": ["9 PED SCI C", "9 PED COM"],
+              "periods": 5,
+              "mergedGroup": ["9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t7_0.80"
@@ -4424,11 +4424,9 @@
           "assignments": [
             {
               "teacher": "Ms. Gayani",
-              "classes": [
-                "9 PED SCI A"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t8_0.80"
@@ -4441,11 +4439,9 @@
           "assignments": [
             {
               "teacher": "Ms. Sansuni",
-              "classes": [
-                "9 PED SCI A"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t8_0.80"
@@ -4458,11 +4454,9 @@
           "assignments": [
             {
               "teacher": "Ms. Hansini",
-              "classes": [
-                "9 PED SCI A"
-              ],
+              "classes": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["9 PED SCI A", "9 PED SCI B", "9 PED SCI C", "9 PED COM"]
             }
           ],
           "bucketId": "t8_0.80"
@@ -5038,15 +5032,15 @@
           "assignments": [
             {
               "teacher": "Ms. Sachini",
-              "classes": [
-                "10 PED SCI A",
-                "10 PED COM"
-              ],
+              "classes": ["10 PED SCI A", "10 PED SCI B"],
               "periods": 5,
-              "mergedGroup": [
-                "10 PED SCI A",
-                "10 PED COM"
-              ]
+              "mergedGroup": ["10 PED SCI A", "10 PED SCI B"]
+            },
+            {
+              "teacher": "Ms. Sachini",
+              "classes": ["10 PED COM"],
+              "periods": 5,
+              "mergedGroup": ["10 PED COM"]
             }
           ],
           "bucketId": "t7_0.80"
@@ -5059,15 +5053,15 @@
           "assignments": [
             {
               "teacher": "Ms. Disna",
-              "classes": [
-                "10 PED SCI A",
-                "10 PED COM"
-              ],
+              "classes": ["10 PED SCI A", "10 PED SCI B"],
               "periods": 5,
-              "mergedGroup": [
-                "10 PED SCI A",
-                "10 PED COM"
-              ]
+              "mergedGroup": ["10 PED SCI A", "10 PED SCI B"]
+            },
+            {
+              "teacher": "Ms. Disna",
+              "classes": ["10 PED COM"],
+              "periods": 5,
+              "mergedGroup": ["10 PED COM"]
             }
           ],
           "bucketId": "t7_0.80"
@@ -5080,11 +5074,9 @@
           "assignments": [
             {
               "teacher": "Ms. Gayani",
-              "classes": [
-                "10 PED SCI A"
-              ],
+              "classes": ["10 PED SCI A", "10 PED SCI B", "10 PED COM"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["10 PED SCI A", "10 PED SCI B", "10 PED COM"]
             }
           ],
           "bucketId": "t8_0.80"
@@ -5097,11 +5089,9 @@
           "assignments": [
             {
               "teacher": "Ms. Sansuni",
-              "classes": [
-                "10 PED SCI A"
-              ],
+              "classes": ["10 PED SCI A", "10 PED SCI B"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["10 PED SCI A", "10 PED SCI B"]
             }
           ],
           "bucketId": "t8_0.80"
@@ -5114,11 +5104,9 @@
           "assignments": [
             {
               "teacher": "Ms. Hansini",
-              "classes": [
-                "10 PED COM"
-              ],
+              "classes": ["10 PED COM"],
               "periods": 5,
-              "mergedGroup": null
+              "mergedGroup": ["10 PED COM"]
             }
           ],
           "bucketId": "t8_0.80"
