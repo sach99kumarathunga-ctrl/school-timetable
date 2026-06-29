@@ -1,84 +1,172 @@
 "use client";
 import { useEffect, useState } from "react";
 
+function deriveGroups(subs) {
+  const seen = new Map();
+  for (const s of subs) {
+    for (const a of s.assignments) {
+      const key = [...a.classes].sort().join(",");
+      if (!seen.has(key)) seen.set(key, [...a.classes]);
+    }
+  }
+  const groups = [...seen.values()].map((classes, id) => ({ id, classes }));
+  const periodsPerLesson = Math.max(1, ...subs.flatMap(s => s.assignments.map(a => a.periods)));
+  const subjects = subs.map(s => ({
+    name: s.subject,
+    origIdx: -1,
+    assignments: groups.map(g => {
+      const key = [...g.classes].sort().join(",");
+      const match = s.assignments.find(a => [...a.classes].sort().join(",") === key);
+      return { groupId: g.id, teacher: match?.teacher || "" };
+    }),
+  }));
+  return { groups, periodsPerLesson, subjects };
+}
+
+function initBuckets(grades) {
+  return grades.map(g => {
+    const bids = [...new Set(g.subjects.filter(s => s.bucketId).map(s => s.bucketId))].sort();
+    const buckets = {};
+    for (const bid of bids) {
+      const subs = g.subjects.filter(s => s.bucketId === bid);
+      const state = deriveGroups(subs);
+      state.bid = bid;
+      buckets[bid] = state;
+    }
+    return { grade: g, buckets };
+  });
+}
+
 export default function BucketsPage() {
   const [grades, setGrades] = useState(null);
   const [gi, setGi] = useState(0);
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
+  const [states, setStates] = useState(null);
 
   useEffect(() => {
-    fetch("/api/model").then(r => r.json()).then(d => setGrades(d.grades));
+    fetch("/api/model").then(r => r.json()).then(d => {
+      setGrades(d.grades);
+      setStates(initBuckets(d.grades));
+    });
   }, []);
 
-  if (!grades) return <div className="wrap" style={{ padding: 60, fontSize: 22 }}>Loading data…</div>;
+  if (!grades || !states) return <div className="wrap" style={{ padding: 60, fontSize: 22 }}>Loading data…</div>;
 
-  const bucketGrades = grades.map((g, i) => ({ i, grade: g, bucketSubjects: g.subjects.filter(s => s.bucketId) }))
-    .filter(x => x.bucketSubjects.length > 0);
-  const cur = bucketGrades[gi];
-  if (!cur) return <div className="wrap" style={{ padding: 60, fontSize: 22 }}>No bucket subjects found.</div>;
+  const cur = states[gi];
+  const g = grades[gi];
+  const bucketIds = Object.keys(cur.buckets).sort();
 
-  const g = cur.grade;
-
-  function update(mut) {
-    const next = structuredClone(grades);
-    mut(next[cur.i]);
-    setGrades(next);
+  function updateBuckets(mut) {
+    const next = structuredClone(states);
+    mut(next[gi]);
+    setStates(next);
   }
 
-  function setSubjectBucket(si, v) {
-    update(gr => { gr.subjects[si].bucketId = v || null; gr.subjects[si].color = v || "none"; });
+  function updateGrades(mut) {
+    const nextG = structuredClone(grades);
+    mut(nextG[gi]);
+    setGrades(nextG);
   }
 
-  function setAssignTeacher(si, ai, v) {
-    update(gr => { gr.subjects[si].assignments[ai].teacher = v; });
-  }
-
-  function toggleClass(si, ai, cls) {
-    update(gr => {
-      const a = gr.subjects[si].assignments[ai];
-      if (a.classes.includes(cls)) a.classes = a.classes.filter(c => c !== cls);
-      else a.classes = [...a.classes, cls];
-      a.mergedGroup = a.classes.length > 1 ? [...a.classes] : null;
+  function toggleGroupClass(bid, gid, cls) {
+    updateBuckets(st => {
+      const group = st.buckets[bid].groups.find(x => x.id === gid);
+      if (!group) return;
+      if (group.classes.includes(cls))
+        group.classes = group.classes.filter(c => c !== cls);
+      else
+        group.classes = [...group.classes, cls];
+      if (group.classes.length === 0)
+        st.buckets[bid].groups = st.buckets[bid].groups.filter(x => x.id !== gid);
     });
   }
 
-  function addMergeBlock(si) {
-    update(gr => {
-      const subj = gr.subjects[si];
-      const existing = subj.assignments.map(a => a.classes.join(","));
-      const used = new Set(subj.assignments.flatMap(a => a.classes));
-      const free = gr.classes.filter(c => !used.has(c));
-      const picks = free.length ? [free[0]] : [];
-      subj.assignments.push({
-        teacher: subj.assignments[0]?.teacher || "New Teacher",
-        classes: picks,
-        periods: 5,
-        mergedGroup: picks.length > 1 ? [...picks] : null,
+  function addMergeGroup(bid) {
+    updateBuckets(st => {
+      const b = st.buckets[bid];
+      const used = new Set(b.groups.flatMap(x => x.classes));
+      const free = g.classes.filter(c => !used.has(c));
+      if (free.length === 0) return;
+      const pick = [free[0]];
+      if (free.length >= 2) pick.push(free[1]);
+      const nid = Math.max(0, ...b.groups.map(x => x.id)) + 1;
+      b.groups.push({ id: nid, classes: pick });
+      for (const subj of b.subjects) {
+        subj.assignments.push({ groupId: nid, teacher: "" });
+      }
+    });
+  }
+
+  function deleteMergeGroup(bid, gid) {
+    updateBuckets(st => {
+      const b = st.buckets[bid];
+      b.groups = b.groups.filter(x => x.id !== gid);
+      for (const subj of b.subjects)
+        subj.assignments = subj.assignments.filter(a => a.groupId !== gid);
+    });
+  }
+
+  function setSubjectTeacher(bid, si, ai, v) {
+    updateBuckets(st => { st.buckets[bid].subjects[si].assignments[ai].teacher = v; });
+  }
+
+  function addSubject(bid) {
+    const name = prompt("New subject name:");
+    if (!name) return;
+    updateBuckets(st => {
+      const b = st.buckets[bid];
+      if (b.subjects.some(x => x.name === name)) return;
+      b.subjects.push({
+        name,
+        assignments: b.groups.map(g => ({ groupId: g.id, teacher: "" })),
       });
     });
   }
 
-  function deleteMergeBlock(si, ai) {
-    update(gr => {
-      gr.subjects[si].assignments.splice(ai, 1);
-      if (gr.subjects[si].assignments.length === 0) gr.subjects.splice(si, 1);
+  function deleteSubject(bid, si) {
+    if (!confirm(`Remove "${cur.buckets[bid].subjects[si].name}" from this bucket?`)) return;
+    updateBuckets(st => {
+      st.buckets[bid].subjects.splice(si, 1);
     });
   }
 
-  function setPeriods(si, ai, v) {
-    update(gr => {
-      gr.subjects[si].assignments[ai].periods = Math.max(0, parseInt(v || "0", 10));
-    });
+  function setPeriodsPerLesson(bid, v) {
+    updateBuckets(st => { st.buckets[bid].periodsPerLesson = Math.max(1, parseInt(v || "1", 10)); });
+  }
+
+  function renameSubject(bid, si, v) {
+    updateBuckets(st => { st.buckets[bid].subjects[si].name = v; });
+  }
+
+  function rebuildGradeBuckets(grade, bucketStates) {
+    for (const [bid, bst] of Object.entries(bucketStates)) {
+      grade.subjects = grade.subjects.filter(s => s.bucketId !== bid);
+      for (const subj of bst.subjects) {
+        const ass = subj.assignments.map(a => {
+          const g = bst.groups.find(x => x.id === a.groupId);
+          return { teacher: a.teacher, classes: g ? [...g.classes] : [], periods: bst.periodsPerLesson };
+        }).filter(a => a.teacher && a.classes.length > 0);
+        if (ass.length === 0) continue;
+        grade.subjects.push({ subject: subj.name, bucketId: bid, color: bid, assignments: ass });
+      }
+    }
   }
 
   async function save() {
+    const nextG = structuredClone(grades);
+    for (const st of states) {
+      const grade = nextG.find(x => x.grade === st.grade.grade);
+      if (!grade) continue;
+      rebuildGradeBuckets(grade, st.buckets);
+    }
+    setGrades(nextG);
     setBusy(true); setStatus("Saving…");
     try {
       const r = await fetch("/api/model", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ grades }),
+        body: JSON.stringify({ grades: nextG }),
       });
       const d = await r.json();
       setStatus(d.saved ? "Saved ✓" : `Not saved: ${d.reason}`);
@@ -87,13 +175,27 @@ export default function BucketsPage() {
   }
 
   async function regenerate() {
+    const nextG = structuredClone(grades);
+    for (const st of states) {
+      const grade = nextG.find(x => x.grade === st.grade.grade);
+      if (!grade) continue;
+      rebuildGradeBuckets(grade, st.buckets);
+    }
+    setGrades(nextG);
     setBusy(true); setStatus("Regenerating timetable… (can take ~30–60s)");
     try {
-      const r = await fetch("/api/regenerate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model: { grades } }) });
+      const r = await fetch("/api/regenerate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model: { grades: nextG } }),
+      });
       const d = await r.json();
       if (!d.ok) { setStatus("Regenerate failed: " + (d.reason || "unknown")); setBusy(false); return; }
-      // Save the result to MongoDB so the timetable viewer picks it up
-      const save = await fetch("/api/timetable/save", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ placements: d.placements, warnings: d.warnings, status: "generated", createdAt: new Date().toISOString() }) });
+      const save = await fetch("/api/timetable/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ placements: d.placements, warnings: d.warnings, status: "generated", createdAt: new Date().toISOString() }),
+      });
       const sd = await save.json();
       setStatus(sd.saved ? `Regenerated ✓ ${d.placements.length} placements, ${d.warnings.length} warnings` : ("Regenerated but save: " + (sd.reason || "?")));
     } catch (e) { setStatus("Regenerate failed: " + e); }
@@ -106,18 +208,18 @@ export default function BucketsPage() {
         <div className="wrap">
           <p className="eyebrow">Bucket management</p>
           <h1>Edit Bucket Merge Groups</h1>
-          <p>Configure which classes are merged together in a bucket subject.
-             Each merge block = a group of classes taught together in the same period.
-             All subjects sharing the same bucket key occupy the same time slot.</p>
+          <p>Merge blocks are defined once per bucket.
+             Tick which classes form each merge group.
+             Then assign teachers per subject per block.</p>
         </div>
       </header>
 
       <nav className="gradebar">
         <div className="wrap">
           <div className="gradetabs">
-            {bucketGrades.map((bg, i) => (
-              <button key={bg.grade.grade} aria-selected={i === gi} onClick={() => setGi(i)}>
-                {bg.grade.grade.replace("Grade ", "Gr ")} ({bg.bucketSubjects.length})
+            {states.map((st, i) => (
+              <button key={st.grade.grade} aria-selected={i === gi} onClick={() => setGi(i)}>
+                {st.grade.grade.replace("Grade ", "Gr ")} ({Object.keys(st.buckets).length})
               </button>
             ))}
           </div>
@@ -127,83 +229,95 @@ export default function BucketsPage() {
 
       <main className="wrap editor">
         <div className="sheet-head">
-          <h2>{g.grade} — Bucket Subjects</h2>
+          <h2>{g.grade}</h2>
           <span className="meta">{g.classes.join(" · ")}</span>
         </div>
 
-        {/* Group subjects by bucketId */}
-        {[...new Set(g.subjects.filter(s => s.bucketId).map(s => s.bucketId))].sort().map(bid => {
-          const subs = g.subjects.filter(s => s.bucketId === bid);
+        {bucketIds.map(bid => {
+          const bst = cur.buckets[bid];
           return (
-            <div key={bid} style={{ marginBottom: 28 }}>
-              <h3 style={{ fontFamily: "Fraunces, serif", fontWeight: 600, fontSize: 18, margin: "16px 0 8px" }}>
-                Bucket: <code style={{ background: "var(--accent-soft)", padding: "2px 8px", borderRadius: 4 }}>{bid}</code>
+            <div key={bid} style={{ marginBottom: 32, border: "1px solid var(--border)", borderRadius: 8, padding: 16 }}>
+              <h3 style={{ fontFamily: "Fraunces, serif", fontWeight: 600, fontSize: 18, margin: "0 0 8px 0" }}>
+                Bucket <code style={{ background: "var(--accent-soft)", padding: "2px 8px", borderRadius: 4 }}>{bid}</code>
+                <span style={{ fontWeight: 400, fontSize: 14, marginLeft: 12, color: "var(--muted)" }}>
+                  Periods per week: <input className="num" type="number" min="1" max="11"
+                    value={bst.periodsPerLesson} onChange={e => setPeriodsPerLesson(bid, e.target.value)}
+                    style={{ width: 48 }} />
+                </span>
               </h3>
-              <table>
-                <thead>
-                  <tr>
-                    <th style={{ width: "14%" }}>Subject</th>
-                    <th style={{ width: "14%" }}>Teacher</th>
-                    <th className="num" style={{ width: "6%" }}>Periods</th>
-                    <th>Classes in merge block (tick multi = merged)</th>
-                    <th style={{ width: "8%" }}>Bucket key</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {subs.map((s, si) => {
-                    // si is the original index in g.subjects
-                    const origIdx = g.subjects.indexOf(s);
-                    return s.assignments.map((a, ai) => (
-                      <tr key={origIdx + "-" + ai}>
-                        {ai === 0 && (
-                          <td rowSpan={s.assignments.length}>
-                            <input value={s.subject} onChange={e => {
-                              update(gr => { gr.subjects[origIdx].subject = e.target.value; });
-                            }} />
+
+              <div style={{ marginBottom: 12 }}>
+                <b style={{ fontSize: 13 }}>Merge groups (tick classes that share the same period):</b>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 8 }}>
+                  {bst.groups.map(g => (
+                    <div key={g.id} style={{
+                      border: "1px solid var(--border)", borderRadius: 6, padding: "6px 10px",
+                      background: "var(--bg)",
+                    }}>
+                      <div className="classpick" style={{ display: "inline-flex" }}>
+                        {g.classes.map(c => (
+                          <label key={c} className={`chip ${g.classes.includes(c) ? "on" : ""}`}
+                            style={{ fontSize: 12 }}>
+                            <input type="checkbox" checked={g.classes.includes(c)}
+                              onChange={() => toggleGroupClass(bid, g.id, c)} />
+                            {c}
+                          </label>
+                        ))}
+                      </div>
+                      {g.classes.length > 1 && (
+                        <span className="mergetag" style={{ marginLeft: 6 }}>merged</span>
+                      )}
+                      <button className="del" title="Delete merge group"
+                        onClick={() => deleteMergeGroup(bid, g.id)} style={{ marginLeft: 6 }}>×</button>
+                    </div>
+                  ))}
+                  <button className="addmini" title="Add a merge group" onClick={() => addMergeGroup(bid)}>+</button>
+                </div>
+              </div>
+
+              {bst.groups.length > 0 && (
+                <table style={{ marginTop: 4 }}>
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      {bst.groups.map(g => (
+                        <th key={g.id}>
+                          {g.classes.length > 1
+                            ? g.classes.join(" + ")
+                            : g.classes[0] || "(empty)"}
+                        </th>
+                      ))}
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bst.subjects.map((subj, si) => (
+                      <tr key={subj.name}>
+                        <td>
+                          <input value={subj.name}
+                            onChange={e => renameSubject(bid, si, e.target.value)}
+                            style={{ fontWeight: 600 }} />
+                        </td>
+                        {subj.assignments.map(a => (
+                          <td key={a.groupId}>
+                            <input value={a.teacher || ""}
+                              onChange={e => setSubjectTeacher(bid, si, subj.assignments.indexOf(a), e.target.value)}
+                              placeholder="Teacher…" />
                           </td>
-                        )}
-                        <td>
-                          <input value={a.teacher || ""} onChange={e => setAssignTeacher(origIdx, ai, e.target.value)} />
-                        </td>
-                        <td>
-                          <input className="num" type="number" min="1" max="11"
-                            value={a.periods ?? 5}
-                            onChange={e => setPeriods(origIdx, ai, e.target.value)} />
-                        </td>
-                        <td>
-                          <div className="classpick">
-                            {g.classes.map(c => (
-                              <label key={c} className={`chip ${a.classes.includes(c) ? "on" : ""}`}>
-                                <input type="checkbox" checked={a.classes.includes(c)}
-                                  onChange={() => toggleClass(origIdx, ai, c)} />
-                                {c}
-                              </label>
-                            ))}
-                          </div>
-                          {a.classes.length > 1 && (
-                            <span className="mergetag">merged: {a.classes.join(" + ")}</span>
-                          )}
-                        </td>
-                        {ai === 0 && (
-                          <td rowSpan={s.assignments.length}>
-                            <input value={s.bucketId || ""} placeholder="(core)"
-                              onChange={e => setSubjectBucket(origIdx, e.target.value)} />
-                          </td>
-                        )}
+                        ))}
                         <td style={{ whiteSpace: "nowrap" }}>
-                          <button className="del" title="Delete this merge block"
-                            onClick={() => deleteMergeBlock(origIdx, ai)}>×</button>
-                          {ai === s.assignments.length - 1 && (
-                            <button className="addmini" title="Add another merge block"
-                              onClick={() => addMergeBlock(origIdx)}>+</button>
-                          )}
+                          <button className="del" title="Remove subject from bucket"
+                            onClick={() => deleteSubject(bid, si)}>×</button>
                         </td>
                       </tr>
-                    ));
-                  })}
-                </tbody>
-              </table>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+
+              <div style={{ marginTop: 8 }}>
+                <button className="addmini" onClick={() => addSubject(bid)}>+ Add subject</button>
+              </div>
             </div>
           );
         })}
