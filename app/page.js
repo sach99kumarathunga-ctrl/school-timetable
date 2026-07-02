@@ -192,8 +192,9 @@ export default function Page() {
   const isIssues = mode === "issues";
   const current = isClass ? cGrids[sel] : (isTeacher ? tGrids[sel] : null);
   const title = isIssues ? "Issues & Conflicts" : sel;
+  const totalShort = data.warnings?.reduce((s, w) => s + (w.short || 0), 0) || 0;
   const subtitle = isIssues
-    ? `${data.warnings?.length || 0} unplaced period(s)· click Fix to auto-resolve`
+    ? `${totalShort} unplaced period(s) · click Fix to auto-resolve`
     : isClass ? "Class timetable" : "Teacher personal timetable";
 
   return (
@@ -221,7 +222,7 @@ export default function Page() {
             <button role="tab" aria-selected={mode === "issues"}
               className={data.warnings?.length > 0 ? "has-issues" : ""}
               onClick={() => { setMode("issues"); setTeacherSearch(""); setClassSearch(""); }}>
-              Issues {data.warnings?.length > 0 ? `(${data.warnings.length})` : ""}
+              Issues {totalShort > 0 ? `(${totalShort})` : ""}
             </button>
           </div>
           <a className="editlink" href="/edit">Edit data</a>

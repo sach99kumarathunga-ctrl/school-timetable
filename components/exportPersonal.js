@@ -76,7 +76,7 @@ export async function exportPersonalExcel({ teacher, info, subjectsTaught }) {
     ["Teacher's Name", teacher, "Employee Number", ""],
     ["Subjects Taught", subjectsTaught || "", "", ""],
     ["Section to which the Teacher Belong to:\n[Primary/Middle School/Lower Secondary/Upper Secondary]", "", "", ""],
-    ["Supervising Sectional Head's Name", "", "Employee Number", ""],
+    ["Supervising Sectional Head's Name", "Clive Christopher", "Employee Number", "1005140"],
   ];
   for (const f of fieldRows) {
     const r = ws.addRow(f);
@@ -173,8 +173,8 @@ export async function exportPersonalPdf({ teacher, info, subjectsTaught }) {
        { content: "Employee Number", styles: { fillColor: [180, 198, 231], fontStyle: "bold", halign: "center" } }, ""],
       [{ content: "Subjects Taught", styles: { fillColor: [217, 225, 242], fontStyle: "bold" } }, subjectsTaught || "", "", ""],
       [{ content: "Section to which the Teacher Belong to:\n[Primary/Middle School/Lower Secondary/Upper Secondary]", styles: { fillColor: [217, 225, 242], fontStyle: "bold" } }, "", "", ""],
-      [{ content: "Supervising Sectional Head's Name", styles: { fillColor: [217, 225, 242], fontStyle: "bold" } }, "",
-       { content: "Employee Number", styles: { fillColor: [180, 198, 231], fontStyle: "bold", halign: "center" } }, ""],
+      [{ content: "Supervising Sectional Head's Name", styles: { fillColor: [217, 225, 242], fontStyle: "bold" } }, "Clive Christopher",
+       { content: "Employee Number", styles: { fillColor: [180, 198, 231], fontStyle: "bold", halign: "center" } }, "1005140"],
     ],
     styles: { font: "helvetica", fontSize: 8, cellPadding: 4, lineColor: [0, 0, 0], lineWidth: 0.4, textColor: [0, 0, 0], valign: "middle" },
     theme: "grid",
